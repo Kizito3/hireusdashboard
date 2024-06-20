@@ -76,7 +76,7 @@ const invoices = [
 
 export function TableDemo() {
   return (
-    <div className="pr-12 font-body my-container mb-14">
+    <div className="pr-12 font-body md:pr-12 px-12 mb-14">
       <div className="mt-[70px] mb-10">
         <h1 className="font-bold text-[24px] text-[#230740]">Shipments</h1>
       </div>
@@ -98,19 +98,19 @@ export function TableDemo() {
               <TableCell className="font-medium border-r border-gray-300 whitespace-nowrap">
                 {invoice.vendor}
               </TableCell>
-              <TableCell className="border-r border-gray-300">
+              <TableCell className="border-r border-gray-300 whitespace-nowrap">
                 {invoice.paymentStatus}
               </TableCell>
-              <TableCell className="border-r border-gray-300">
+              <TableCell className="border-r border-gray-300 whitespace-nowrap">
                 {invoice.pickup}
               </TableCell>
-              <TableCell className="border-r border-gray-300">
+              <TableCell className="border-r border-gray-300 whitespace-nowrap">
                 {invoice.dropoff}
               </TableCell>
-              <TableCell className="text-left border-r border-gray-300">
+              <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
                 {invoice.date}
               </TableCell>
-              <TableCell className="text-left border-r border-gray-300">
+              <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
                 {invoice.time}
               </TableCell>
             </TableRow>

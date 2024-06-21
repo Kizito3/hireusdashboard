@@ -7,74 +7,12 @@ import {
   TableHeader,
   TableRow,
 } from "../../../../@/components/ui/table";
+import avatarF from "/images/avatarF.png";
+import { invoices } from "@/Data/Data";
+import avatarM from "/images/avatarM.png";
+import { PaginationDemo } from "./Pagination";
 
-const invoices = [
-  {
-    vendor: "Gloria Uwana",
-    paymentStatus: "Paid",
-    dropoff: "10 Ire Akari Estate, Isolo",
-    pickup: "2 obiorah close, Isolo",
-    date: "01/12/2024",
-    time: "3:00pm",
-    Status: "Delivered",
-  },
-  {
-    vendor: "Gloria Uwana",
-    paymentStatus: "Pending",
-    dropoff: "10 Ire Akari Estate, Isolo",
-    pickup: "2 obiorah close, Isolo",
-    date: "01/12/2024",
-    time: "3:00pm",
-    Status: "Delivered",
-  },
-  {
-    vendor: "Gloria Uwana",
-    paymentStatus: "Unpaid",
-    dropoff: "10 Ire Akari Estate, Isolo",
-    pickup: "2 obiorah close, Isolo",
-    date: "01/12/2024",
-    time: "3:00pm",
-    Status: "Delivered",
-  },
-  {
-    vendor: "Gloria Uwana",
-    paymentStatus: "Paid",
-    dropoff: "10 Ire Akari Estate, Isolo",
-    pickup: "2 obiorah close, Isolo",
-    date: "01/12/2024",
-    time: "3:00pm",
-    Status: "Delivered",
-  },
-  {
-    vendor: "Gloria Uwana",
-    paymentStatus: "Paid",
-    dropoff: "10 Ire Akari Estate, Isolo",
-    pickup: "2 obiorah close, Isolo",
-    date: "01/12/2024",
-    time: "3:00pm",
-    Status: "Delivered",
-  },
-  {
-    vendor: "Gloria Uwana",
-    paymentStatus: "Pending",
-    dropoff: "10 Ire Akari Estate, Isolo",
-    pickup: "2 obiorah close, Isolo",
-    date: "01/12/2024",
-    time: "3:00pm",
-    Status: "Delivered",
-  },
-  {
-    vendor: "Gloria Uwana",
-    paymentStatus: "Unpaid",
-    dropoff: "10 Ire Akari Estate, Isolo",
-    pickup: "2 obiorah close, Isolo",
-    date: "01/12/2024",
-    time: "3:00pm",
-    Status: "Delivered",
-  },
-];
-
-export function TableDemo() {
+export function TableData() {
   return (
     <div className="pr-12 font-body md:pr-12 px-12 mb-14">
       <div className="mt-[70px] mb-10">
@@ -89,17 +27,22 @@ export function TableDemo() {
             <TableHead className="">Drop-off</TableHead>
             <TableHead className="">Date</TableHead>
             <TableHead className="">Time</TableHead>
-            <TableHead className="text-left">Status</TableHead>
+            <TableHead className="text-left py-6">Status</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {invoices.map((invoice) => (
             <TableRow key={invoice.vendor} className="border-b border-gray-300">
-              <TableCell className="font-medium border-r border-gray-300 whitespace-nowrap">
-                {invoice.vendor}
+              <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
+                <div className="flex items-center gap-2">
+                  <img src={avatarF} alt="" /> {invoice.vendor}
+                </div>
               </TableCell>
-              <TableCell className="border-r border-gray-300 whitespace-nowrap">
-                {invoice.paymentStatus}
+              <TableCell className="border-r border-gray-300 whitespace-nowrap w-[200px]">
+                <div className="flex items-center gap-2">
+                  <img src={avatarM} alt="" />
+                  {invoice.riders}
+                </div>
               </TableCell>
               <TableCell className="border-r border-gray-300 whitespace-nowrap">
                 {invoice.pickup}
@@ -123,6 +66,10 @@ export function TableDemo() {
           </TableRow>
         </TableFooter>
       </Table>
+
+      <div className="mt-14">
+        <PaginationDemo />
+      </div>
     </div>
   );
 }

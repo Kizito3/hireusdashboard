@@ -5,6 +5,9 @@ import { IconType } from "react-icons";
 import { FaRegFolderClosed, FaBox } from "react-icons/fa6";
 import { MdPedalBike, MdGroups } from "react-icons/md";
 import { CardProps } from "../types/card-types";
+import { TableProps } from "@/types/table-types";
+import { RidersProps } from "@/types/rider-types";
+import { VendorProps } from "@/types/vendor-types";
 
 type DataProps = {
     navName: string,
@@ -26,27 +29,27 @@ export const NavItems: DataProps[] = [
     {
         navName: "Riders",
         icon: MdPedalBike,
-        link: "/riders",
+        link: "riders",
     },
     {
         navName: "Vendors",
         icon: MdGroups,
-        link: "/venders",
+        link: "vendors",
     },
     {
         navName: "Profile",
         icon: CgProfile,
-        link: "/profile",
+        link: "profile",
     },
     {
         navName: "Change Password",
         icon: CiLock,
-        link: "/change-password",
+        link: "change-password",
     },
     {
         navName: "Log Out",
         icon:RiLogoutCircleLine ,
-        link: "/logout",
+        link: "logout",
     }
 ]
 
@@ -87,5 +90,218 @@ export const CardInfo: CardProps[] = [
         iconBgColor: "text-shipments-400",
         textColor: "text-shipments-500",
         smallText: "text-shipments-300"
+    },
+]
+
+export const invoices: TableProps[] = [
+    {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Delivered",
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Delivered",
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Delivered",
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Delivered",
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Delivered",
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Delivered",
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Delivered",
+      },
+]
+
+
+export const riders: RidersProps[]= [
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Pending",
+        color: "text-[#e8505b]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Paid",
+        color: "text-[#1ea435]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Pending",
+        color: "text-[#e8505b]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Paid",
+        color: "text-[#1ea435]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Paid",
+        color: "text-[#1ea435]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Pending",
+        color: "text-[#e8505b]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Paid",
+        color: "text-[#1ea435]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Pending",
+        color: "text-[#e8505b]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Pending",
+        color: "text-[#e8505b]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Paid",
+        color: "text-[#1ea435]"
+    },
+    {
+        name: "Victor john",
+        number: +2348164361932,
+        email: "johnvictor@gmail.com",
+        location: "Lagos",
+        shipment: 100,
+        payment: "Pending",
+        color: "text-[#e8505b]"
+    },
+]
+
+
+export const vendors: VendorProps[] = [
+    {
+        name: "Gloria Uwana",
+        phone: +2348164361932,
+        email: "gloriauwana@gmail.com",
+        location: "Lagos",
+        plan: "Renew",
+        shipment: 56,
+    },
+    {
+        name: "Gloria Uwana",
+        phone: +2348164361932,
+        email: "gloriauwana@gmail.com",
+        location: "Lagos",
+        plan: "Renew",
+        shipment: 56,
+    },
+    {
+        name: "Gloria Uwana",
+        phone: +2348164361932,
+        email: "gloriauwana@gmail.com",
+        location: "Lagos",
+        plan: "Renew",
+        shipment: 56,
+    },
+    {
+        name: "Gloria Uwana",
+        phone: +2348164361932,
+        email: "gloriauwana@gmail.com",
+        location: "Lagos",
+        plan: "Renew",
+        shipment: 56,
+    },
+    {
+        name: "Gloria Uwana",
+        phone: +2348164361932,
+        email: "gloriauwana@gmail.com",
+        location: "Lagos",
+        plan: "Renew",
+        shipment: 56,
     },
 ]

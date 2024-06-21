@@ -11,7 +11,7 @@ export default function DashboardLayout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-[#f9fffc]">
       {/* TopBar */}
       <div className="h-16 font-body bg-white fixed z-30 top-0 left-0 w-full shadow-lg pr-4 md:pr-20 lg:pr-40 flex items-center justify-between">
         <div className="flex items-center">

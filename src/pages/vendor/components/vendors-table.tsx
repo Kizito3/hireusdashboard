@@ -12,8 +12,19 @@ import {
   import { FaRegTrashAlt } from "react-icons/fa";
   import { PaginationDemo } from "@/pages/Home/components/Pagination";
   import { CiSearch } from "react-icons/ci";
+import { useEffect, useState } from "react";
+import TableSkeleton from "@/skeletons/TableSkeleton";
   
   export function VendorsTable() {
+    const [loading, setLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setLoading(false)
+      }, 2000);
+      return () => clearTimeout(timer)
+    },[])
+
     return (
       <div className="pr-12 font-body md:pr-12 px-12 mb-14 mt-5">
         <div className="flex flex-wrap items-center justify-between mb-6">
@@ -47,7 +58,12 @@ import {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {vendors.map((vendor) => (
+            {loading ? 
+              Array.from({length: 5}).map((_,i) => (
+                <TableSkeleton key={i}/>
+              ))  
+          :
+            vendors.map((vendor) => (
               <TableRow key={vendor.name} className="border-b border-gray-300">
                 <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
                   <div className="flex items-center gap-2 md:w-[200px] w-[200px]">

@@ -11,8 +11,18 @@ import {
   import { invoices } from "@/Data/Data";
   import avatarM from "/images/avatarM.png";
 import { PaginationDemo } from "@/pages/Home/components/Pagination";
+import { useEffect, useState } from "react";
+import TableSkeleton from "@/skeletons/TableSkeleton";
   
   export function ShipmentTable() {
+    const [loading, setLoading] = useState<boolean>(true)
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    },[])
     return (
       <div className=" font-body mb-14">
         
@@ -29,7 +39,11 @@ import { PaginationDemo } from "@/pages/Home/components/Pagination";
             </TableRow>
           </TableHeader>
           <TableBody>
-            {invoices.map((invoice) => (
+            {loading
+            ? Array.from({length: 7}).map((_,i) => (
+              <TableSkeleton key={i}/>
+            ))
+            : invoices.map((invoice) => (
               <TableRow key={invoice.vendor} className="border-b border-gray-300">
                 <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
                   <div className="flex items-center gap-2 md:w-[200px] w-[200px]">

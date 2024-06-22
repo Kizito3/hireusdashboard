@@ -9,7 +9,7 @@ export default function AllShipment({ shipment }: PropsTypes) {
   console.log("AllShipment Props:", shipment); // Debugging line
 
   return (
-    <div className="font-body mt-0 md:mt-16 md:pr-12 px-12">
+    <div className="font-body mt-0 md:mt-16 md:px-10 px-4 mb-14 font-[500]">
       <div>
         <h1 className="font-bold text-[24px] text-[#230740] md:mb-16">
           Shipments (20)
@@ -40,6 +40,7 @@ export default function AllShipment({ shipment }: PropsTypes) {
           {shipment.map((item, i) => (
             <div key={i} className="bg-white mt-4 mb-4 py-6 shadow-lg md:px-0 w-full">
               <EachShipment
+                id={item.id}
                 name={item.name}
                 pickup={item.pickup}
                 dropoff={item.dropoff}

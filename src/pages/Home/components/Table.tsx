@@ -28,7 +28,7 @@ export function TableData() {
   }, []);
 
   return (
-    <div className="pr-12 font-body md:pr-12 px-12 mb-14">
+    <div className="font-body md:px-10 px-4 mb-14 font-semibold">
       <div className="mt-[70px] mb-10">
         <h1 className="font-bold text-[24px] text-[#230740]">Shipments</h1>
       </div>

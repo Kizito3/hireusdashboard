@@ -343,6 +343,7 @@ export const vendors: VendorProps[] = [
 
 export const allshipment: shipmentProps[] = [
     {
+        id: 1,
         name: "Gloria Uwana",
         pickup: "2 obiorah close, Isolo",
         dropoff: "10 Ire Akari Estate, Isolo",
@@ -355,6 +356,7 @@ export const allshipment: shipmentProps[] = [
     },
 
     {
+        id: 2,
         name: "Gloria Uwana",
         pickup: "2 obiorah close, Isolo",
         dropoff: "10 Ire Akari Estate, Isolo",
@@ -367,6 +369,7 @@ export const allshipment: shipmentProps[] = [
     },
 
     {
+        id:3,
         name: "Gloria Uwana",
         pickup: "2 obiorah close, Isolo",
         dropoff: "10 Ire Akari Estate, Isolo",
@@ -379,6 +382,7 @@ export const allshipment: shipmentProps[] = [
     },
 
     {
+        id:4,
         name: "Gloria Uwana",
         pickup: "2 obiorah close, Isolo",
         dropoff: "10 Ire Akari Estate, Isolo",
@@ -390,6 +394,7 @@ export const allshipment: shipmentProps[] = [
         to: "shipment-details"
     },
     {
+        id: 5,
         name: "Gloria Uwana",
         pickup: "2 obiorah close, Isolo",
         dropoff: "10 Ire Akari Estate, Isolo",

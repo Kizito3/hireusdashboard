@@ -26,7 +26,7 @@ import TableSkeleton from "@/skeletons/TableSkeleton";
     },[])
 
     return (
-      <div className="pr-12 font-body md:pr-12 px-12 mb-14 mt-5">
+      <div className="font-body md:px-10 px-4 mt-6">
         <div className="flex flex-wrap items-center justify-between mb-6">
           <div className="md:mt-[70px] md:mb-10">
             <h1 className="font-bold text-[24px] text-[#230740]">Total Vendors (50)</h1>

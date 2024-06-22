@@ -3,7 +3,7 @@ import React from 'react';
 export default function NewPassword() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted"); // Add any additional functionality here
+    console.log("Form submitted");
   }
 
   return (

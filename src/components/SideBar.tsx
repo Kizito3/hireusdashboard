@@ -4,7 +4,7 @@ import logo from "/images/logo.png";
 
 export default function SideBar() {
   return (
-    <div className="px-8">
+    <div className="px-8 font-[500]">
       <div className="">
         <img src={logo} alt="hireUs logo" />
       </div>

@@ -21,7 +21,7 @@ export default function Card({ cards }: PropsTypes) {
   }, []);
 
   return (
-    <div className="font-body mt-0 md:mt-16 md:pr-12 px-12">
+    <div className="font-body mt-0 md:mt-16 font-[500] md:px-10 px-4">
       <div>
         <h1 className="font-bold text-[24px] text-[#230740]">Insights</h1>
       </div>
@@ -33,7 +33,7 @@ export default function Card({ cards }: PropsTypes) {
           : cards.map((item, i) => (
               <div
                 key={i}
-                className={`${item.bgColor} px-14 py-10 rounded-3xl shadow-lg md:mt-0 mt-7 hover:shadow-none transition-all ease-in-out`}
+                className={`${item.bgColor} px-4 py-10 rounded-3xl shadow-lg md:mt-0 mt-7 hover:shadow-none transition-all ease-in-out`}
               >
                 <EachCard
                   total={item.total}

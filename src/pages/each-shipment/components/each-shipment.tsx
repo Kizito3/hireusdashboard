@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa6";
 
 export default function EachShipment({
+  id,
   name,
   pickup,
   dropoff,
@@ -12,7 +13,6 @@ export default function EachShipment({
   status,
   border,
   textColor,
-  to
 }: shipmentProps) {
 
   return (
@@ -26,11 +26,13 @@ export default function EachShipment({
       <div>{date}</div>
       <div>{time}</div>
       <div className="flex items-center gap-2">
-        <div className={`${border} ${textColor} rounded-full py-2 px-3`}>
-          {status}
+        <div className="md:w-[150px] w-[200px] text-center">
+          <div className={`${border} ${textColor} rounded-full py-2`}>
+            {status}
+          </div>
         </div>
         <div>
-          <Link to={to}>
+          <Link to={`${id}`}>
             <FaAngleRight />
           </Link>
         </div>

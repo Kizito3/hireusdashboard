@@ -7,10 +7,12 @@ import {
   TableHeader,
   TableRow,
 } from "../../../../@/components/ui/table";
-import avatarF from "/images/avatarF.png";
+import avatarF from "/images/avatarF.png"; 
 import { invoices } from "@/Data/Data";
 import avatarM from "/images/avatarM.png";
 import { PaginationDemo } from "./Pagination";
+import { Link } from "react-router-dom";
+import { FaAngleRight } from "react-icons/fa";
 
 export function TableData() {
   return (
@@ -33,13 +35,13 @@ export function TableData() {
         <TableBody>
           {invoices.map((invoice) => (
             <TableRow key={invoice.vendor} className="border-b border-gray-300">
-              <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
-                <div className="flex items-center gap-2">
+              <TableCell className="font-medium w-[250px] border-r border-gray-300 whitespace-nowrap ">
+                <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
                   <img src={avatarF} alt="" /> {invoice.vendor}
                 </div>
               </TableCell>
-              <TableCell className="border-r border-gray-300 whitespace-nowrap w-[200px]">
-                <div className="flex items-center gap-2">
+              <TableCell className="border-r border-gray-300 whitespace-nowrap md:w-[200px] w-[300px]">
+                <div className="flex items-center md:gap-2 md:w-[200px] w-[200px]">
                   <img src={avatarM} alt="" />
                   {invoice.riders}
                 </div>
@@ -55,6 +57,18 @@ export function TableData() {
               </TableCell>
               <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
                 {invoice.time}
+              </TableCell>
+              <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
+              <div className="flex items-center gap-3">
+              <div className="md:w-[150px] w-[200px] text-center ">
+                <div className={`${invoice.border} ${invoice.textColor} py-2 rounded-full`}>
+                {invoice.Status}
+                </div>
+                </div>
+                <div>
+                <Link to={invoice.to}><FaAngleRight /></Link>
+                </div>
+              </div>
               </TableCell>
             </TableRow>
           ))}

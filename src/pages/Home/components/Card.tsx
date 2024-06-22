@@ -7,7 +7,7 @@ type PropsTypes = {
 };
 export default function Card({ cards }: PropsTypes) {
   return (
-    <div className="font-body mt-0 md:mt-14 md:pr-12 px-12">
+    <div className="font-body mt-0 md:mt-16 md:pr-12 px-12">
         <div>
             <h1 className="font-bold text-[24px] text-[#230740]">Insights</h1>
         </div>

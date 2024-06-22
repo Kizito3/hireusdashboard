@@ -50,7 +50,7 @@ import {
             {vendors.map((vendor) => (
               <TableRow key={vendor.name} className="border-b border-gray-300">
                 <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
                     <img src={avatarM} alt="" /> {vendor.name}
                   </div>
                 </TableCell>

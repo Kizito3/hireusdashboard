@@ -32,12 +32,12 @@ import { PaginationDemo } from "@/pages/Home/components/Pagination";
             {invoices.map((invoice) => (
               <TableRow key={invoice.vendor} className="border-b border-gray-300">
                 <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
                     <img src={avatarF} alt="" /> {invoice.vendor}
                   </div>
                 </TableCell>
                 <TableCell className="border-r border-gray-300 whitespace-nowrap w-[200px]">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
                     <img src={avatarM} alt="" />
                     {invoice.riders}
                   </div>

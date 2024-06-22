@@ -14,7 +14,7 @@ export default function Buttons() {
         </div>
 
         <div className="flex items-center gap-4">
-        <CiSearch /><span>Search</span>
+        <CiSearch size={25}/><span>Search</span>
         </div>
        </div>
     </div>

@@ -5,5 +5,8 @@ export type TableProps = {
     pickup: string,
     date: string,
     time: string,
-    Status: string
+    Status: string,
+    border?: string,
+    textColor?: string,
+    to: string,
 }

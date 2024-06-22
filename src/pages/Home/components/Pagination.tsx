@@ -10,7 +10,8 @@ import {
   
   export function PaginationDemo() {
     return (
-      <Pagination className="bg-white py-4">
+     <div className="bg-white py-4 shadow-md w-full">
+       <Pagination>
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious href="#" />
@@ -34,6 +35,7 @@ import {
           </PaginationItem>
         </PaginationContent>
       </Pagination>
+     </div>
     )
   }
   

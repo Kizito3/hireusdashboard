@@ -5,7 +5,7 @@ export default function TopBar() {
     <div className="">
       <div className="grid grid-cols-3 md:gap-7 items-center place-items-center pl-4 lg:pl-60">
           <div>
-            <h1 className="text-tertiary">DashBoard</h1>
+            <h1 className="text-tertiary font-semibold">Dashboard</h1>
           </div>
           <div className='hidden md:block'>
             <input type="search" placeholder="search" className='2xl:w-[474px] md:w-[300px] border h-[37px] rounded-full outline-none px-6' />
@@ -15,7 +15,7 @@ export default function TopBar() {
             <div className='flex items-center gap-4 whitespace-nowrap'>
               {/* avatar */}
               <img src={avatar} alt="" />
-              <h2 className=''>Hello Sonia</h2>
+              <h2 className='font-semibold'>Hello Sonia</h2>
             </div>
           </div>
       </div>

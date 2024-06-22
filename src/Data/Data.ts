@@ -8,6 +8,7 @@ import { CardProps } from "../types/card-types";
 import { TableProps } from "@/types/table-types";
 import { RidersProps } from "@/types/rider-types";
 import { VendorProps } from "@/types/vendor-types";
+import { shipmentProps } from "@/types/all-shipment-types";
 
 type DataProps = {
     navName: string,
@@ -102,6 +103,57 @@ export const invoices: TableProps[] = [
         date: "01/12/2024",
         time: "3:00pm",
         Status: "Delivered",
+        border: "border border-[#6ada7d]",
+        textColor: "text-[#1ea435]",
+        to: "all-shipment"
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Pending",
+        border: "border border-[#e8505b]",
+        textColor: "text-[#e8505b]",
+        to: "all-shipment"
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Ongoing",
+        border: "border border-[#a490cc]",
+        textColor: "text-[#551b8f]",
+        to: "all-shipment"
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Cancelled",
+        border: "border border-[#07c3ff]",
+        textColor: "text-[#07c3ff]",
+        to: "all-shipment"
+      },
+      {
+        vendor: "Gloria Uwana",
+        riders: "Victor John",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        pickup: "2 obiorah close, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        Status: "Accepted",
+        border: "border border-[#e6ba8f]",
+        textColor: "text-[#ff9933]",
+        to: "all-shipment"
       },
       {
         vendor: "Gloria Uwana",
@@ -111,6 +163,9 @@ export const invoices: TableProps[] = [
         date: "01/12/2024",
         time: "3:00pm",
         Status: "Delivered",
+         border: "border border-[#6ada7d]",
+        textColor: "text-[#1ea435]",
+        to: "all-shipment"
       },
       {
         vendor: "Gloria Uwana",
@@ -119,7 +174,10 @@ export const invoices: TableProps[] = [
         pickup: "2 obiorah close, Isolo",
         date: "01/12/2024",
         time: "3:00pm",
-        Status: "Delivered",
+        Status: "Pending",
+        border: "border border-[#e8505b]",
+        textColor: "text-[#e8505b]",
+        to: "all-shipment"
       },
       {
         vendor: "Gloria Uwana",
@@ -128,34 +186,10 @@ export const invoices: TableProps[] = [
         pickup: "2 obiorah close, Isolo",
         date: "01/12/2024",
         time: "3:00pm",
-        Status: "Delivered",
-      },
-      {
-        vendor: "Gloria Uwana",
-        riders: "Victor John",
-        dropoff: "10 Ire Akari Estate, Isolo",
-        pickup: "2 obiorah close, Isolo",
-        date: "01/12/2024",
-        time: "3:00pm",
-        Status: "Delivered",
-      },
-      {
-        vendor: "Gloria Uwana",
-        riders: "Victor John",
-        dropoff: "10 Ire Akari Estate, Isolo",
-        pickup: "2 obiorah close, Isolo",
-        date: "01/12/2024",
-        time: "3:00pm",
-        Status: "Delivered",
-      },
-      {
-        vendor: "Gloria Uwana",
-        riders: "Victor John",
-        dropoff: "10 Ire Akari Estate, Isolo",
-        pickup: "2 obiorah close, Isolo",
-        date: "01/12/2024",
-        time: "3:00pm",
-        Status: "Delivered",
+        Status: "Ongoing",
+        border: "border border-[#a490cc]",
+        textColor: "text-[#551b8f]",
+        to: "all-shipment"
       },
 ]
 
@@ -303,5 +337,67 @@ export const vendors: VendorProps[] = [
         location: "Lagos",
         plan: "Renew",
         shipment: 56,
+    },
+]
+
+
+export const allshipment: shipmentProps[] = [
+    {
+        name: "Gloria Uwana",
+        pickup: "2 obiorah close, Isolo",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        status: "Accepted",
+        border: "border border-[#e6ba8f]",
+        textColor: "text-[#ff9933]",
+        to: "shipment-details"
+    },
+
+    {
+        name: "Gloria Uwana",
+        pickup: "2 obiorah close, Isolo",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        status: "Ongoing",
+        border: "border border-[#a490cc]",
+        textColor: "text-[#551b8f]",
+        to: "shipment-details"
+    },
+
+    {
+        name: "Gloria Uwana",
+        pickup: "2 obiorah close, Isolo",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        status: "Pending",
+        border: "border border-[#e8505b]",
+        textColor: "text-[#e8505b]",
+        to: "shipment-details"
+    },
+
+    {
+        name: "Gloria Uwana",
+        pickup: "2 obiorah close, Isolo",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        status: "Cancelled",
+        border: "border border-[#07c3ff]",
+        textColor: "text-[#07c3ff]",
+        to: "shipment-details"
+    },
+    {
+        name: "Gloria Uwana",
+        pickup: "2 obiorah close, Isolo",
+        dropoff: "10 Ire Akari Estate, Isolo",
+        date: "01/12/2024",
+        time: "3:00pm",
+        status: "Delivered",
+        border: "border border-[#6ada7d]",
+        textColor: "text-[#1ea435]",
+        to: "shipment-details"
     },
 ]

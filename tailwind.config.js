@@ -80,7 +80,7 @@ module.exports = withMT({
         },
       },
       fontFamily: {
-        body: ['Poppins']
+        body: ['Satoshi']
       },
       borderRadius: {
         lg: "var(--radius)",

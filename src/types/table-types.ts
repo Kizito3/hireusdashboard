@@ -9,4 +9,5 @@ export type TableProps = {
     border?: string,
     textColor?: string,
     to: string,
+    link: string
 }

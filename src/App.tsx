@@ -12,13 +12,13 @@ import ShipmentDetails from "./pages/shipmentdetails";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<DashboardLayout />}>
+      <Route path="/" element={<DashboardLayout />}> 
         <Route index element={<Dashboard />} />
         <Route path="shipment" element={<Shipment />} />
         <Route path="all-shipment/:id" element={<ShipmentDetails />} /> {/* Dynamic route */}
         <Route path="riders" element={<Riders />} />
         <Route path="vendors" element={<Vendors />} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="vendors-profile" element={<Profile />} />
         <Route path="all-shipment" element={<Shipments />} />
         <Route path="change-password" element={<NewPassword />} />
       </Route>

@@ -13,6 +13,7 @@ import { PaginationDemo } from "@/pages/Home/components/Pagination";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import TableSkeleton from "@/skeletons/TableSkeleton";
+import Dropdown from "./Dropdown";
 
 export function RidersTable() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -23,6 +24,7 @@ export function RidersTable() {
     }, 2000)
     return () => clearTimeout(timer);
   },[])
+
   return (
     <div className="font-body md:px-10 px-4 mb-14 mt-5">
       <div className="flex flex-wrap items-center justify-between mb-6">
@@ -40,24 +42,27 @@ export function RidersTable() {
           </div>
         </div>
       </div>
+
       <Table className="border border-gray-300 font-medium w-full">
         <TableHeader className="w-full bg-[#72459f] text-white border-gray-300 ">
           <TableRow className="border-b border-gray-300">
-            <TableHead className="w-[100px] ">Name</TableHead>
-            <TableHead className="">Phone</TableHead>
-            <TableHead className="">Email</TableHead>
-            <TableHead className="">Location</TableHead>
-            <TableHead className="">Shipment</TableHead>
-            <TableHead className="">Payment</TableHead>
+            <TableHead className="w-[100px]">Name</TableHead>
+            <TableHead>Phone</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Location</TableHead>
+            <TableHead>Shipment</TableHead>
+            <TableHead>Payment</TableHead>
             <TableHead className="text-left py-6">Status</TableHead>
+            <TableHead className="text-left">Actions</TableHead>
           </TableRow>
         </TableHeader>
+
         <TableBody>
           {loading ? 
             Array.from({length: 7}).map((_,i) => (
               <TableSkeleton key={i}/>
             ))
-        :
+          :
           riders.map((rider) => (
             <TableRow key={rider.name} className="border-b border-gray-300">
               <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
@@ -82,13 +87,26 @@ export function RidersTable() {
               >
                 {rider.payment}
               </TableCell>
+              <TableCell
+                className={`border-r border-gray-300 whitespace-nowrap text-center`}
+              >
+                <div className="md:w-[150px] w-[200px] text-center">
+                  <div className={`border border-[#6ada7d] text-[#48b55b] py-2 rounded-full`}>
+                    {rider.active}
+                  </div>
+                </div>
+              </TableCell>
+              <TableCell className="text-center">
+                <Dropdown/>
+                
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
+
         <TableFooter className="border-t border-gray-300">
           <TableRow>
-            <TableCell colSpan={3} className=""></TableCell>
-            <TableCell className="text-right"></TableCell>
+            <TableCell colSpan={8} className=""></TableCell>
           </TableRow>
         </TableFooter>
       </Table>

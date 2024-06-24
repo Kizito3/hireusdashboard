@@ -40,7 +40,7 @@ export const NavItems: DataProps[] = [
     {
         navName: "Profile",
         icon: CgProfile,
-        link: "profile",
+        link: "vendors-profile",
     },
     {
         navName: "Change Password",
@@ -105,7 +105,8 @@ export const invoices: TableProps[] = [
         Status: "Delivered",
         border: "border border-[#6ada7d]",
         textColor: "text-[#1ea435]",
-        to: "all-shipment"
+        to: "all-shipment",
+        link: "vendors-profile"
       },
       {
         vendor: "Gloria Uwana",
@@ -117,7 +118,8 @@ export const invoices: TableProps[] = [
         Status: "Pending",
         border: "border border-[#e8505b]",
         textColor: "text-[#e8505b]",
-        to: "all-shipment"
+        to: "all-shipment",
+        link: "vendors-profile"
       },
       {
         vendor: "Gloria Uwana",
@@ -129,7 +131,8 @@ export const invoices: TableProps[] = [
         Status: "Ongoing",
         border: "border border-[#a490cc]",
         textColor: "text-[#551b8f]",
-        to: "all-shipment"
+        to: "all-shipment",
+        link: "vendors-profile"
       },
       {
         vendor: "Gloria Uwana",
@@ -141,7 +144,8 @@ export const invoices: TableProps[] = [
         Status: "Cancelled",
         border: "border border-[#07c3ff]",
         textColor: "text-[#07c3ff]",
-        to: "all-shipment"
+        to: "all-shipment",
+        link: "vendors-profile"
       },
       {
         vendor: "Gloria Uwana",
@@ -153,7 +157,8 @@ export const invoices: TableProps[] = [
         Status: "Accepted",
         border: "border border-[#e6ba8f]",
         textColor: "text-[#ff9933]",
-        to: "all-shipment"
+        to: "all-shipment",
+        link: "vendors-profile"
       },
       {
         vendor: "Gloria Uwana",
@@ -165,7 +170,8 @@ export const invoices: TableProps[] = [
         Status: "Delivered",
          border: "border border-[#6ada7d]",
         textColor: "text-[#1ea435]",
-        to: "all-shipment"
+        to: "all-shipment",
+        link: "vendors-profile"
       },
       {
         vendor: "Gloria Uwana",
@@ -177,7 +183,8 @@ export const invoices: TableProps[] = [
         Status: "Pending",
         border: "border border-[#e8505b]",
         textColor: "text-[#e8505b]",
-        to: "all-shipment"
+        to: "all-shipment",
+        link: "vendors-profile"
       },
       {
         vendor: "Gloria Uwana",
@@ -189,7 +196,8 @@ export const invoices: TableProps[] = [
         Status: "Ongoing",
         border: "border border-[#a490cc]",
         textColor: "text-[#551b8f]",
-        to: "all-shipment"
+        to: "all-shipment",
+        link: "vendors-profile"
       },
 ]
 
@@ -202,7 +210,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Pending",
-        color: "text-[#e8505b]"
+        color: "text-[#e8505b]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -211,7 +220,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Paid",
-        color: "text-[#1ea435]"
+        color: "text-[#1ea435]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -220,7 +230,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Pending",
-        color: "text-[#e8505b]"
+        color: "text-[#e8505b]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -229,7 +240,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Paid",
-        color: "text-[#1ea435]"
+        color: "text-[#1ea435]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -238,7 +250,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Paid",
-        color: "text-[#1ea435]"
+        color: "text-[#1ea435]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -247,7 +260,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Pending",
-        color: "text-[#e8505b]"
+        color: "text-[#e8505b]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -256,7 +270,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Paid",
-        color: "text-[#1ea435]"
+        color: "text-[#1ea435]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -265,7 +280,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Pending",
-        color: "text-[#e8505b]"
+        color: "text-[#e8505b]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -274,7 +290,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Pending",
-        color: "text-[#e8505b]"
+        color: "text-[#e8505b]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -283,7 +300,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Paid",
-        color: "text-[#1ea435]"
+        color: "text-[#1ea435]",
+        active: "Active"
     },
     {
         name: "Victor john",
@@ -292,7 +310,8 @@ export const riders: RidersProps[]= [
         location: "Lagos",
         shipment: 100,
         payment: "Pending",
-        color: "text-[#e8505b]"
+        color: "text-[#e8505b]",
+        active: "Active"
     },
 ]
 

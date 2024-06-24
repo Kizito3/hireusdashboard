@@ -1,6 +1,9 @@
+import VendorsProfile from "./components/VendorsProfile";
 
 export default function Profile() {
   return (
-    <div>Profile</div>
+    <div>
+      <VendorsProfile />
+    </div>
   )
 }

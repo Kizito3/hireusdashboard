@@ -26,7 +26,7 @@ export default function EachShipment({
       <div>{date}</div>
       <div>{time}</div>
       <div className="flex items-center gap-2">
-        <div className="md:w-[150px] w-[200px] text-center">
+        <div className="md:w-[150px] w-[100px] text-center">
           <div className={`${border} ${textColor} rounded-full py-2`}>
             {status}
           </div>

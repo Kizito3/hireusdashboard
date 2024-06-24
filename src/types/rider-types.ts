@@ -7,4 +7,5 @@ export type RidersProps = {
     payment: string,
     status?: string,
     color? : string,
+    active?: string
 }

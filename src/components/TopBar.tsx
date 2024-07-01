@@ -1,4 +1,5 @@
-import avatar from '/images/avatarF.png';
+// import avatar from '/images/avatarF.png';
+import MyAvatar from './Avatar';
 
 export default function TopBar() {
   return (
@@ -12,7 +13,8 @@ export default function TopBar() {
         </div>
         <div className="pl-40">
           <div className='flex items-center gap-4 whitespace-nowrap'>
-            <img src={avatar} alt="User Avatar" />
+            {/* <img src={avatar} alt="User Avatar" /> */}
+            <MyAvatar />
             <div className='font-semibold'>
               <h2 className="hidden lg:block">Hello Sonia</h2>
             </div>

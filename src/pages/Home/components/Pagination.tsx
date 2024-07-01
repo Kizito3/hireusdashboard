@@ -10,10 +10,10 @@ import {
   
   export function PaginationDemo() {
     return (
-     <div className="bg-white py-4 shadow-md w-full">
+     <div className="bg-white py-4 w-full">
        <Pagination>
         <PaginationContent>
-          <PaginationItem>
+          <PaginationItem className="">
             <PaginationPrevious href="#" />
           </PaginationItem>
           <PaginationItem className="">

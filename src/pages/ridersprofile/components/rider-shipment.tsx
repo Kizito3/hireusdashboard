@@ -1,13 +1,12 @@
 
 import { PaginationDemo } from '@/pages/Home/components/Pagination';
-import VendorPlan from './vendor-plan';
-import VendorAllShipments from './vendor-all-shipment';
+import RidersAllShipments from './rider-all-shipment';
 
-export default function VendorShipments() {
+export default function RidersShipments() {
   return (
     <div className="font-body mt-0 md:mt-16 md:px-10 px-4 mb-14 font-[500]">
       <div>
-        <h1 className="font-bold text-[24px] text-[#230740] md:mb-16">
+        <h1 className="font-bold text-[24px] text-[#230740] md:mb-16 text-center">
           Shipments (20)
         </h1>
       </div>
@@ -31,11 +30,11 @@ export default function VendorShipments() {
           <h3>Status</h3>
         </div>
       </div>
-        <VendorAllShipments />
+        <RidersAllShipments />
 
       <PaginationDemo />
       <div>
-        <VendorPlan />
+        {/* <VendorPlan /> */}
       </div>
     </div>
   );

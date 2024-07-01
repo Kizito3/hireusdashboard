@@ -18,7 +18,7 @@ export default function Dropdown() {
     <DropdownMenuSeparator />
     <DropdownMenuItem>Delete</DropdownMenuItem>
     <DropdownMenuSeparator />
-    <Link to="riders-profile">
+    <Link to="/riders-profile">
     <DropdownMenuItem>View Profile</DropdownMenuItem>
     </Link>
     <DropdownMenuSeparator />

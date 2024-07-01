@@ -1,8 +1,10 @@
 import Buttons from "@/pages/shipment/components/buttons";
 import profile from "/images/profile.png";
+import vector from "/images/Vector.png";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoCard } from "react-icons/io5";
 import VendorShipments from "./vendor-shipment";
+import { Link } from "react-router-dom";
 
 export default function VendorsProfile() {
   return (
@@ -11,8 +13,13 @@ export default function VendorsProfile() {
         <h1 className="font-bold text-[24px] text-[#230740]">Profile</h1>
       </div>
       <div className="grid place-items-center">
-        <div>
+        <div className="relative">
           <img src={profile} alt="" />
+          <div className="absolute right-[-8px] bottom-7">
+            <Link to="/edit-profile">
+            <img src={vector} alt="" />
+            </Link>
+          </div>
         </div>
         <div className="text-center">
           <h4 className="text-[20px] font-[700] mt-4">Victor John</h4>

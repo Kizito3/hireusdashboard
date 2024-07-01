@@ -1,6 +1,7 @@
+import RidersProfile from "./components/RidersProfile";
 
 export default function index() {
   return (
-    <div>index</div>
+    <div><RidersProfile /></div>
   )
 }

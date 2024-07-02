@@ -2,10 +2,10 @@
 import profile from "/images/rider.png";
 import vector from "/images/Vector.png";
 import { FaLocationDot } from "react-icons/fa6";
-// import { IoCard } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import RidersShipments from "./rider-shipment";
+import Reviews from "./reviews";
 
 export default function RidersProfile() {
   return (
@@ -17,7 +17,7 @@ export default function RidersProfile() {
         <div className="relative">
           <img src={profile} alt="" />
           <div className="absolute right-[-8px] bottom-7">
-            <Link to="/edit-profile">
+            <Link to="/edit-rider">
             <img src={vector} alt="" />
             </Link>
           </div>
@@ -50,6 +50,10 @@ export default function RidersProfile() {
         </div>
       </div>
       <RidersShipments />
+
+      <div>
+        <Reviews />
+      </div>
     </div>
   );
 }

@@ -15,6 +15,7 @@ function App() {
         <Route path="change-password" element={<pages.NewPassword />} />
         <Route path="/edit-profile" element={<pages.EditProfile />} />
         <Route path="/riders-profile" element={<pages.RidersProfile />} />
+        <Route path="/edit-rider" element={<pages.EditRider />}/>
       </Route>
     </Routes>
   );

@@ -8,3 +8,4 @@ export { default as NewPassword } from './new-password';
 export { default as ShipmentDetails } from './shipmentdetails';
 export {default as EditProfile} from './edit-profile'
 export {default as RidersProfile} from './ridersprofile'
+export {default as EditRider} from './edit-rider'

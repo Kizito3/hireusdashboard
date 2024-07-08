@@ -16,6 +16,7 @@ function App() {
         <Route path="/edit-profile" element={<pages.EditProfile />} />
         <Route path="/riders-profile" element={<pages.RidersProfile />} />
         <Route path="/edit-rider" element={<pages.EditRider />}/>
+        <Route path="/riders-account" element={<pages.RidersAccount />}/>
       </Route>
     </Routes>
   );

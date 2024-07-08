@@ -1,4 +1,4 @@
-import { shipmentProps } from "@/types/all-shipment-types";
+
 import AvatarF from "/images/avatarF.png";
 import { Link } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa6";

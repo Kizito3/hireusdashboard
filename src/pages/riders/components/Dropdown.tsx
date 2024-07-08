@@ -22,9 +22,13 @@ export default function Dropdown() {
     <DropdownMenuItem>View Profile</DropdownMenuItem>
     </Link>
     <DropdownMenuSeparator />
+    <Link to='/all-shipment'>
     <DropdownMenuItem>View Shipments</DropdownMenuItem>
+    </Link>
     <DropdownMenuSeparator />
-    <DropdownMenuItem>View Subscription</DropdownMenuItem>
+    <Link to='/riders-account'>
+    <DropdownMenuItem>View Account</DropdownMenuItem>
+    </Link>
   </DropdownMenuContent>
 </DropdownMenu>
 

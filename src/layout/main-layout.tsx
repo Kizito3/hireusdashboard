@@ -42,7 +42,7 @@ export default function DashboardLayout() {
       </div>
 
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-40 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0 transition-transform duration-300 ease-in-out lg:col-span-3 lg:h-screen lg:inset-y-0 font-body py-8 overflow-x-hidden bg-tertiary text-white w-64`}>
+      <div className={`fixed inset-y-0 left-0 z-40 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0 transition-transform duration-300 ease-in-out lg:col-span-3 lg:h-screen lg:inset-y-0 font-body py-8 overflow-x-hidden bg-tertiary text-white`}>
         <SideBar />
       </div>
 

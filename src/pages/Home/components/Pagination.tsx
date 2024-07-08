@@ -10,12 +10,13 @@ import {
   
   export function PaginationDemo() {
     return (
-     <div className="bg-white py-4 w-full">
+     <div className="bg-white p-4 w-full">
        <Pagination>
-        <PaginationContent>
-          <PaginationItem className="">
-            <PaginationPrevious href="#" />
+        <PaginationContent className="flex justify-between gap-8 w-full">
+          <PaginationItem>
+            <PaginationPrevious href="#" className="hover:bg-none" />
           </PaginationItem>
+          <div className="flex gap-4">
           <PaginationItem className="">
             <PaginationLink href="#" isActive>1</PaginationLink>
           </PaginationItem>
@@ -30,6 +31,7 @@ import {
           <PaginationItem>
             <PaginationEllipsis />
           </PaginationItem>
+          </div>
           <PaginationItem>
             <PaginationNext href="#" />
           </PaginationItem>

@@ -4,8 +4,8 @@ export default function EachCard({
   total,
   info,
   icon,
-  index
-}: CardProps & { index?: number }) {
+  index,
+}: CardProps & { index ? : number }) {
   const Icon = icon;
   return (
     <div

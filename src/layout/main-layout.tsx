@@ -48,7 +48,7 @@ export default function DashboardLayout() {
 
       {/* Close Icon - Only shown when sidebar is open on mobile/tablet */}
       {isSidebarOpen && (
-        <button onClick={toggleSidebar} className="fixed z-50 top-4 left-52 text-white bg-tertiary p-2 rounded lg:hidden">
+        <button onClick={toggleSidebar} className="fixed z-50 top-4 left-48 text-white bg-tertiary p-2 rounded lg:hidden">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -62,7 +62,7 @@ export default function DashboardLayout() {
 
       {/* Overlay for Sidebar on Mobile and Tablets */}
       {isSidebarOpen && (
-        <div className="fixed inset-0 bg-black opacity-50 z-30 2xl:hidden" onClick={toggleSidebar}></div>
+        <div className="fixed inset-0 bg-black/50 z-30 2xl:hidden" onClick={toggleSidebar}></div>
       )}
     </div>
   );

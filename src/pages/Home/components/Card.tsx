@@ -7,7 +7,7 @@ type PropsTypes = {
 };
 
 export default function Card({ cards }: PropsTypes) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     // Simulate a loading delay

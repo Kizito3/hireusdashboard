@@ -1,11 +1,11 @@
-import { cn } from "../../../../@/lib/utils"
+import { cn } from "../../../../@/lib/utils";
 
 export default function RiderCard({
   total,
   text,
   icon,
-  index
-}: RidersAccountTypes & {index?:number}) {
+  index,
+}: RidersAccountTypes & { index?: number }) {
   const Icon = icon;
   const Total = Number(total).toLocaleString();
   return (
@@ -33,9 +33,18 @@ export default function RiderCard({
           >
             {Total}
           </h3>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <div>
-              <Icon />
+              <Icon
+                size={32}
+                className={cn(
+                  index === 0
+                    ? "text-tertiary"
+                    : index === 1
+                    ? "text-[#f19f69]"
+                    : "text-[#699bf7]"
+                )}
+              />
             </div>
             <div>
               <p

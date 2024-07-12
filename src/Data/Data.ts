@@ -16,7 +16,7 @@ export const NavItems: DataProps[] = [
   {
     navName: "Dashboard",
     icon: CiGrid42,
-    link: "/",
+    link: "/dashboard",
   },
   {
     navName: "Shipments",
@@ -419,5 +419,43 @@ export const RiderAccount: RidersAccountTypes[] = [
     total: 1000,
     text: "Shipments",
     icon: FaBox,
+  },
+];
+
+export const RiderEarnings: RiderAccountProps[] = [
+  {
+    vendor: "John Victor",
+    date: "01/12/2024",
+    earnings: 1500,
+    percentage: 500,
+    time: "3:00pm",
+  },
+  {
+    vendor: "John Victor",
+    date: "01/12/2024",
+    earnings: 1500,
+    percentage: 500,
+    time: "3:00pm",
+  },
+  {
+    vendor: "John Victor",
+    date: "01/12/2024",
+    earnings: 1500,
+    percentage: 500,
+    time: "3:00pm",
+  },
+  {
+    vendor: "John Victor",
+    date: "01/12/2024",
+    earnings: 1500,
+    percentage: 500,
+    time: "3:00pm",
+  },
+  {
+    vendor: "John Victor",
+    date: "01/12/2024",
+    earnings: 1500,
+    percentage: 500,
+    time: "3:00pm",
   },
 ];

@@ -1,4 +1,4 @@
-import { shipmentProps } from "@/types/all-shipment-types";
+// import { shipmentProps } from "@/types/all-shipment-types";
 import EachShipment from "./each-shipment";
 
 type PropsTypes = {

@@ -18,15 +18,15 @@ export default function Dropdown() {
     <DropdownMenuSeparator />
     <DropdownMenuItem>Delete</DropdownMenuItem>
     <DropdownMenuSeparator />
-    <Link to="/riders-profile">
+    <Link to="/dashboard/riders-profile">
     <DropdownMenuItem>View Profile</DropdownMenuItem>
     </Link>
     <DropdownMenuSeparator />
-    <Link to='/all-shipment'>
+    <Link to='/dashboard/all-shipment'>
     <DropdownMenuItem>View Shipments</DropdownMenuItem>
     </Link>
     <DropdownMenuSeparator />
-    <Link to='/riders-account'>
+    <Link to='/dashboard/riders-account'>
     <DropdownMenuItem>View Account</DropdownMenuItem>
     </Link>
   </DropdownMenuContent>

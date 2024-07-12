@@ -12,3 +12,5 @@ export {default as EditProfile} from './edit-profile'
 export {default as RidersProfile} from './ridersprofile'
 export {default as EditRider} from './edit-rider'
 export {default as RidersAccount} from './ridersaccount'
+export * from './Auth/login'
+export * from './signup';

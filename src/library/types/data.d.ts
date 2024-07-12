@@ -11,6 +11,20 @@ type RidersAccountTypes = {
   
  };
 
+ type DataProps = {
+   navName: string;
+   icon: IconType;
+   link: string;
+ };
+
+ type RiderAccountProps = {
+  vendor: string;
+  date: string;
+  earnings: number;
+  percentage: number;
+  time: string;
+ }
+
  type RidersProps = {
    name: string;
    number: number;

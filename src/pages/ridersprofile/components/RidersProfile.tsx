@@ -17,7 +17,7 @@ export default function RidersProfile() {
         <div className="relative">
           <img src={profile} alt="" />
           <div className="absolute right-[-8px] bottom-7">
-            <Link to="/edit-rider">
+            <Link to="/dashboard/edit-rider">
             <img src={vector} alt="" />
             </Link>
           </div>

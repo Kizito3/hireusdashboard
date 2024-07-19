@@ -16,7 +16,7 @@ export default function VendorsProfile() {
         <div className="relative">
           <img src={profile} alt="" />
           <div className="absolute right-[-8px] bottom-7">
-            <Link to="/edit-profile">
+            <Link to="/dashboard/edit-profile">
             <img src={vector} alt="" />
             </Link>
           </div>

@@ -17,8 +17,8 @@ export const RegisterForm = () => {
   const form = useForm({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
-        firstname: "",
-        lastname: "",
+      firstname: "",
+      lastname: "",
       email: "",
       password: "",
     },
@@ -28,7 +28,7 @@ export const RegisterForm = () => {
     console.log("submitted");
   };
   return (
-    <div className="px-14 font-body flex justify-center flex-col items-center">
+    <div className=" font-body flex sm:justify-start flex-col sm:items-start justify-center items-center w-full">
       <div className="mb-10">
         <h2 className="sm:text-5xl text-3xl font-bold text-tertiary capitalize">
           Create Account

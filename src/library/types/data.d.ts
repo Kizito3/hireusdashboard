@@ -71,6 +71,9 @@ type shipmentProps = {
   textColor: string;
   to?: string;
 };
+
+type Roles = "admin" | "x-admin" | "company" | "manager";
+
 type User = {
   _id: string;
   avatarUrl: string;
@@ -80,7 +83,7 @@ type User = {
   phone: string[];
   state_of_residence: string;
   account_type: string;
-  roles: string[];
+  roles: Roles[];
   addresses: Address[] | [];
   createdAt: string | Date;
   updatedAt: string | Date;

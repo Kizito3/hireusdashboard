@@ -3,13 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { isDate, isEmail } from "validator";
 import { v4 as uuid } from "uuid";
 
-globalThis.ls = (key: string, value: string) => {
-  localStorage.setItem(key, value);
-};
 
-globalThis.xls = (key: string) => {
-  localStorage.removeItem(key);
-};
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

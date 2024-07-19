@@ -33,25 +33,30 @@ export function TableData() {
         <h1 className="font-bold text-[24px] text-[#230740]">Shipments</h1>
       </div>
       <Table className="border border-gray-300 font-semibold">
-        <TableHeader className="w-full bg-[#72459f] text-white border-gray-300">
+        <TableHeader className="w-full bg-[#72459f] border-gray-300 font-bold text-[17px] uppercase text-white">
           <TableRow className="border-b border-gray-300">
-            <TableHead className="w-[100px]">Vendor</TableHead>
-            <TableHead>Rider</TableHead>
-            <TableHead>Pickup</TableHead>
-            <TableHead>Drop-off</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead>Time</TableHead>
-            <TableHead className="text-left py-6">Status</TableHead>
+            <TableHead className="w-[100px] text-white font-bold">
+              Vendor
+            </TableHead>
+            <TableHead className="text-white font-bold">Rider</TableHead>
+            <TableHead className="text-white font-bold">Pickup</TableHead>
+            <TableHead className="text-white font-bold">Drop-off</TableHead>
+            <TableHead className="text-white font-bold">Date</TableHead>
+            <TableHead className="text-white font-bold">Time</TableHead>
+            <TableHead className="text-left py-6 font-bold text-white">
+              Status
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {loading
-            ? Array.from({ length: 7 }).map((_, i) => (
-                <TableSkeleton key={i} />
-              ))
+            ? Array.from({ length: 7 }).map((_, i) => <TableSkeleton key={i} />)
             : invoices.map((invoice) => (
-                <TableRow key={invoice.vendor} className="border-b border-gray-300">
-                  <TableCell className="font-medium w-[250px] border-r border-gray-300 whitespace-nowrap">
+                <TableRow
+                  key={invoice.vendor}
+                  className="border-b border-gray-300 text-[16px]"
+                >
+                  <TableCell className=" w-[250px] border-r border-gray-300 whitespace-nowrap">
                     <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
                       <img src={avatarF} alt="" /> {invoice.vendor}
                     </div>
@@ -77,12 +82,16 @@ export function TableData() {
                   <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
                     <div className="flex items-center gap-3">
                       <div className="md:w-[150px] w-[200px] text-center">
-                        <div className={`${invoice.border} ${invoice.textColor} py-2 rounded-full`}>
-                          {invoice.Status}
+                        <div
+                          className={`${invoice.border} ${invoice.textColor} py-2 rounded-full`}
+                        >
+                          {invoice.Status} 
                         </div>
                       </div>
                       <div>
-                        <Link to={invoice.to}><FaAngleRight /></Link>
+                        <Link to={invoice.to}>
+                          <FaAngleRight />
+                        </Link>
                       </div>
                     </div>
                   </TableCell>

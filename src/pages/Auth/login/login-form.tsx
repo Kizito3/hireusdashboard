@@ -21,7 +21,7 @@ const onSubmit = () => {
     console.log("submitted");
 }
   return (
-    <div className="px-14 font-body flex justify-center flex-col items-center">
+    <div className=" font-body flex sm:justify-start flex-col sm:items-start justify-center items-center w-full">
       <div className="mb-10">
         <h2 className="sm:text-5xl text-3xl font-bold text-tertiary capitalize">
           Login to your account

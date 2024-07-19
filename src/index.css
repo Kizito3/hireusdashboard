@@ -9,6 +9,7 @@
     margin-inline: auto;
 }
 
+
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -81,3 +82,24 @@
       @apply bg-background text-foreground;
     } */
   }
+@layer base{
+
+  .step-item {
+    @apply relative flex flex-col justify-center items-center;
+}
+
+.step-item:not(:first-child):before {
+    @apply content-[''] bg-[#d8d8d8] absolute md:w-[310px] w-[160px] h-[3px] right-2/4 top-5;
+}
+
+.step {
+    @apply w-10 h-10 flex items-center justify-center z-10 relative rounded-full font-semibold text-tertiary border border-[#d8d8d8];
+}
+
+.active .step {
+    @apply bg-tertiary text-white;
+}
+.step-item.active:not(:first-child)::before {
+  @apply bg-tertiary;
+}
+}

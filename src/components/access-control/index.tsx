@@ -1,15 +1,22 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { Loader } from "lucide-react";
 
-import { useAuthStore, useRefreshToken } from "../../library/hooks";
+import {
+  useAuthStore,
+  useProfileStore,
+  useRefreshToken,
+} from "../../library/hooks";
 import { useLayoutEffect, useState } from "react";
 
-export const RequireAuth = () => {
+export const RequireAuth = ({ allowedRoles }: { allowedRoles?: Roles[] }) => {
   const { accessToken } = useAuthStore();
+  const { profile } = useProfileStore();
   const location = useLocation();
 
-  return accessToken ? (
+  return profile?.roles?.find((role) => allowedRoles?.includes(role)) ? (
     <Outlet />
+  ) : accessToken ? (
+    <Navigate to="/unauthorized" state={{ from: location }} replace />
   ) : (
     <Navigate to="/" state={{ from: location }} replace />
   );

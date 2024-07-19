@@ -25,51 +25,81 @@ import TableSkeleton from "@/skeletons/TableSkeleton";
     },[])
     return (
       <div className=" font-body mb-14">
-        
         <Table className="border border-r border-gray-300">
-          <TableHeader className="w-full py-10 border border-gray-300 ">
+          <TableHeader className="w-full py-10 border border-gray-300 uppercase font-bold text-[17px]">
             <TableRow className="border-b border-gray-300">
-              <TableHead className="w-[100px] border border-gray-300">Vendor</TableHead>
-              <TableHead className="border border-gray-300">Rider</TableHead>
-              <TableHead className="border border-gray-300">Pickup</TableHead>
-              <TableHead className="border border-gray-300">Drop-off</TableHead>
-              <TableHead className="border border-gray-300">Date</TableHead>
-              <TableHead className="border border-gray-300 py-6">Time</TableHead>
-              <TableHead className="text-left">Status</TableHead>
+              <TableHead className="w-[100px] border border-gray-300 text-black font-bold">
+                Vendor
+              </TableHead>
+              <TableHead className="border border-gray-300 text-black font-bold">
+                Rider
+              </TableHead>
+              <TableHead className="border border-gray-300 text-black font-bold">
+                Pickup
+              </TableHead>
+              <TableHead className="border border-gray-300 text-black font-bold">
+                Drop-off
+              </TableHead>
+              <TableHead className="border border-gray-300 text-black font-bold">
+                Date
+              </TableHead>
+              <TableHead className="border border-gray-300 py-6 text-black font-bold">
+                Time
+              </TableHead>
+              <TableHead className="text-left text-black font-bold">
+                Status
+              </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {loading
-            ? Array.from({length: 7}).map((_,i) => (
-              <TableSkeleton key={i}/>
-            ))
-            : invoices.map((invoice) => (
-              <TableRow key={invoice.vendor} className="border-b border-gray-300">
-                <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
-                  <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
-                    <img src={avatarF} alt="" /> {invoice.vendor}
-                  </div>
-                </TableCell>
-                <TableCell className="border-r border-gray-300 whitespace-nowrap w-[200px]">
-                  <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
-                    <img src={avatarM} alt="" />
-                    {invoice.riders}
-                  </div>
-                </TableCell>
-                <TableCell className="border-r border-gray-300 whitespace-nowrap">
-                  {invoice.pickup}
-                </TableCell>
-                <TableCell className="border-r border-gray-300 whitespace-nowrap">
-                  {invoice.dropoff}
-                </TableCell>
-                <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
-                  {invoice.date}
-                </TableCell>
-                <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
-                  {invoice.time}
-                </TableCell>
-              </TableRow>
-            ))}
+              ? Array.from({ length: 7 }).map((_, i) => (
+                  <TableSkeleton key={i} />
+                ))
+              : invoices.map((invoice) => (
+                  <TableRow
+                    key={invoice.vendor}
+                    className="border-b border-gray-300 text-[16px]"
+                  >
+                    <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
+                      <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
+                        <img src={avatarF} alt="" /> {invoice.vendor}
+                      </div>
+                    </TableCell>
+                    <TableCell className="border-r border-gray-300 whitespace-nowrap w-[200px]">
+                      <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
+                        <img src={avatarM} alt="" />
+                        {invoice.riders}
+                      </div>
+                    </TableCell>
+                    <TableCell className="border-r border-gray-300 whitespace-nowrap">
+                      {invoice.pickup}
+                    </TableCell>
+                    <TableCell className="border-r border-gray-300 whitespace-nowrap">
+                      {invoice.dropoff}
+                    </TableCell>
+                    <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
+                      {invoice.date}
+                    </TableCell>
+                    <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
+                      {invoice.time}
+                    </TableCell>
+                    <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
+                      <div className="flex items-center gap-3">
+                        <div className="md:w-[150px] w-[200px] text-center">
+                          <div
+                            className={`${invoice.border} ${invoice.textColor} py-2 rounded-full`}
+                          >
+                            {invoice.Status}
+                          </div>
+                        </div>
+                        <div>
+                         
+                        </div>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
           </TableBody>
           <TableFooter className="border-t border-gray-300">
             <TableRow>
@@ -78,7 +108,7 @@ import TableSkeleton from "@/skeletons/TableSkeleton";
             </TableRow>
           </TableFooter>
         </Table>
-  
+
         <div className="mt-14">
           <PaginationDemo />
         </div>

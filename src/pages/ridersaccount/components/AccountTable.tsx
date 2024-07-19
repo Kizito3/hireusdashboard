@@ -47,13 +47,13 @@ export function AccountEarnings() {
       </div>
 
       <Table className="border border-gray-300 font-bold w-full">
-        <TableHeader className="w-full bg-[#998bb6] text-white border-gray-300">
+        <TableHeader className="w-full bg-[#998bb6] border-gray-300 uppercase text-[17px]">
           <TableRow className="border-b border-gray-300 py-5">
-            <TableHead className="py-8">Vendor</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead>Earnings</TableHead>
-            <TableHead>HireUs %</TableHead>
-            <TableHead>Time</TableHead>
+            <TableHead className="py-8 text-white font-bold">Vendor</TableHead>
+            <TableHead className="text-white font-bold">Date</TableHead>
+            <TableHead className="text-white font-bold">Earnings</TableHead>
+            <TableHead className="text-white font-bold">HireUs %</TableHead>
+            <TableHead className="text-white font-bold">Time</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -63,7 +63,7 @@ export function AccountEarnings() {
             : RiderEarnings.map((rider) => (
                 <TableRow
                   key={rider.vendor}
-                  className="border-b border-gray-300"
+                  className="border-b border-gray-300 text-[16px]"
                 >
                   <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">
                     <div className="flex items-center gap-2 sm:w-[200px] w-[200px]">

@@ -5,6 +5,7 @@ import { IconType } from "react-icons";
 import { FaRegFolderClosed, FaBox } from "react-icons/fa6";
 import { MdPedalBike, MdGroups, MdDisabledVisible } from "react-icons/md";
 import { FaRegCreditCard } from "react-icons/fa";
+import { User } from "lucide-react";
 
 type DataProps = {
   navName: string;
@@ -37,6 +38,11 @@ export const NavItems: DataProps[] = [
     navName: "Profile",
     icon: CgProfile,
     link: "vendors-profile",
+  },
+  {
+    navName: "Agents",
+    icon: User,
+    link: "agents",
   },
   {
     navName: "Change Password",

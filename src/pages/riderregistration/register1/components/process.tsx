@@ -19,7 +19,7 @@ export const Process = ({ currentStep }: ProcessProps) => {
 
   return (
     <div className="w-full">
-      <div className="flex justify-between font-body font-bold w-full">
+      <div className="flex font-body font-bold ">
         {steps.map((step, i) => (
           <div
             key={i}
@@ -29,7 +29,7 @@ export const Process = ({ currentStep }: ProcessProps) => {
             )}
           >
             <div className="step">
-              {i >= currentStep ? <Dot /> : <Check />}
+              {i >= currentStep ? <Dot size={46}/> : <Check />}
             </div>
             <p className="text-gray hidden">{step}</p>
           </div>

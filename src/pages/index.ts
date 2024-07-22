@@ -14,5 +14,5 @@ export * from './agents/index'
 export * from "./Auth/login";
 export * from "./signup";
 export * from "./unauthorized";
-export * from "./company/register1/components";
-export * from './company/register/index'
+export * from "./riderregistration/register1/components";
+// export * from './company/register/index'

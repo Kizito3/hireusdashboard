@@ -2,12 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import DashboardLayout from "./layout/main-layout";
 import * as pages from "./pages";
 import { AuthLayout } from "./layout/auth-layout";
-import { PersistLogin, RequireAuth } from "./components/access-control";
+import { PersistLogin } from "./components/access-control";
 import { Login } from "./pages/Auth/login";
 import { Register } from "./pages/Auth/register";
 import { VerifyEmail } from "./pages/Auth/verify";
 import { Forgot } from "./pages/Auth/forgot";
-import { ROLES } from "./library/constants";
+import { RegisterLayout } from "./layout/register-layout";
+// import { ROLES } from "./library/constants";
 
 function App() {
   return (
@@ -26,13 +27,13 @@ function App() {
           <RequireAuth allowedRoles={["x-admin", "company", "manager"]} />
         }
       > */}
-        <Route element={<AuthLayout />}>
-          <Route
-            path="/dashboard/company"
-            element={<pages.Company/>}
-          />
-          <Route path="/dashboard/register" element={<pages.RiderRegister />}/>
-        </Route>
+      <Route element={<RegisterLayout />}>
+        <Route
+          path="/dashboard/rider-registration"
+          element={<pages.RiderRegistration />}
+        />
+        {/* <Route path="/dashboard/register" element={<pages.RiderRegister />}/> */}
+      </Route>
       {/* </Route> */}
       {/* PROTECTED ROUTES */}
 
@@ -51,7 +52,7 @@ function App() {
             path="/dashboard/all-shipment/:id"
             element={<pages.ShipmentDetails />}
           />
-          <Route path='/dashboard/agents' element={<pages.Agents />}/>
+          <Route path="/dashboard/agents" element={<pages.Agents />} />
           <Route path="/dashboard/riders" element={<pages.Riders />} />
           <Route path="/dashboard/vendors" element={<pages.Vendors />} />
           <Route

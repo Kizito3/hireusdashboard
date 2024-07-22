@@ -14,6 +14,7 @@ import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import TableSkeleton from "@/skeletons/TableSkeleton";
 import Dropdown from "./Dropdown";
+import { Link } from "react-router-dom";
 
 export function RidersTable() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -40,7 +41,9 @@ export function RidersTable() {
             <span>Search</span>
           </div>
           <div>
+            <Link to="/dashboard/rider-registration">
             <span className="text-tertiary font-medium">+ Add Rider</span>
+            </Link>
           </div>
         </div>
       </div>

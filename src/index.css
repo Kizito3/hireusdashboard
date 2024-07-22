@@ -85,11 +85,11 @@
 @layer base{
 
   .step-item {
-    @apply relative flex flex-col justify-center items-center;
+    @apply relative flex justify-center w-full;
 }
 
 .step-item:not(:first-child):before {
-    @apply content-[''] bg-[#d8d8d8] absolute md:w-[310px] w-[160px] h-[3px] right-2/4 top-5;
+    @apply content-[''] bg-[#d8d8d8] absolute w-full h-[3px] right-2/4 top-5;
 }
 
 .step {

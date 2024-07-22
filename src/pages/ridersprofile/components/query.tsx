@@ -15,33 +15,33 @@ export default function Query() {
       <form className="mt-10" onSubmit={onSubmit}>
         <div className="mb-4">
           <Checkbox />{" "}
-          <span className="md:pl-3 sm:text-xl text-sm">
+          <span className="md:pl-3  text-sm">
             I'm experiencing technical issues with the app. Can you assist me?
           </span>
         </div>
         <div className="mb-4">
           <Checkbox />{" "}
-          <span className="md:pl-3 sm:text-xl text-sm">
+          <span className="md:pl-3  text-sm">
             Can I request a refund for a ride that didn't meet expectations?
           </span>
         </div>
         <div className="mb-4">
           <Checkbox />{" "}
-          <span className="md:pl-3 sm:text-xl text-sm">
+          <span className="md:pl-3  text-sm">
             How does the platform ensure rider safety and security?
           </span>
         </div>
         <div className="mb-4">
           <Checkbox />{" "}
-          <span className="md:pl-3 sm:text-xl text-sm">
+          <span className="md:pl-3  text-sm">
             Can you provide information about promotions or discounts available?
           </span>
         </div>
         <div className="mb-6">
-          <Checkbox /> <span className="md:pl-3 sm:text-xl text-sm">Others</span>
+          <Checkbox /> <span className="md:pl-3 text-sm">Others</span>
         </div>
         <div className="flex flex-col">
-          <label htmlFor="message" className="sm:text-xl text-sm">Message</label>
+          <label htmlFor="message" className=" text-sm">Message</label>
           <textarea
             id="message"
             placeholder="Query"

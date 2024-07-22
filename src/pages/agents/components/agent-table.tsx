@@ -30,7 +30,7 @@ export function AgentsTable() {
       <div className="flex flex-wrap items-center justify-between mb-6">
         <div className="md:mt-[70px] md:mb-10">
           <h1 className="font-bold text-[24px] text-[#230740]">
-            Total Company Registered (50)
+            Total Agent Registered (50)
           </h1>
         </div>
 

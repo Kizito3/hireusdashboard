@@ -15,4 +15,3 @@ export * from "./Auth/login";
 export * from "./signup";
 export * from "./unauthorized";
 export * from "./riderregistration/register1/components";
-// export * from './company/register/index'

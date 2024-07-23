@@ -36,13 +36,13 @@ export function RidersTable() {
         </div>
 
         <div className="flex items-center gap-4 mt-5">
-          <div className="flex items-center gap-4">
-            <CiSearch />
-            <span>Search</span>
+          <div className="flex items-center gap-1">
+            <CiSearch className="font-bold text-xl" size={25}/>
+            <span className="font-bold text-xl">Search</span>
           </div>
           <div>
             <Link to="/dashboard/rider-registration">
-            <span className="text-tertiary font-medium">+ Add Rider</span>
+            <span className="text-tertiary font-bold text-xl">+ Add Rider</span>
             </Link>
           </div>
         </div>

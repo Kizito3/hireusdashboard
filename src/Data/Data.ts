@@ -46,6 +46,11 @@ export const NavItems: DataProps[] = [
     link: "agents",
   },
   {
+    navName: "Company",
+    icon: ImProfile,
+    link: "company",
+  },
+  {
     navName: "Change Password",
     icon: CiLock,
     link: "change-password",

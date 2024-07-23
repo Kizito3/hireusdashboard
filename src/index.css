@@ -8,6 +8,12 @@
     width: 95%;
     margin-inline: auto;
 }
+*{
+  scroll-behavior: smooth;
+  /* scrollbar-width: thin; */
+  scrollbar-width: thin;
+  scrollbar-color:#551b8f;
+}
 
 
   @layer base {

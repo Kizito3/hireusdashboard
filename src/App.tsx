@@ -8,6 +8,8 @@ import { Register } from "./pages/Auth/register";
 import { VerifyEmail } from "./pages/Auth/verify";
 import { Forgot } from "./pages/Auth/forgot";
 import { RegisterLayout } from "./layout/register-layout";
+import { Company } from "./pages/company";
+import { RegisterCompany } from "./pages/register-company";
 // import { ROLES } from "./library/constants";
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
           path="/dashboard/rider-registration"
           element={<pages.RiderRegistration />}
         />
+        <Route path="/dashboard/company-registration" element={<RegisterCompany />}/>
         {/* <Route path="/dashboard/register" element={<pages.RiderRegister />}/> */}
       </Route>
       {/* </Route> */}
@@ -53,6 +56,7 @@ function App() {
             element={<pages.ShipmentDetails />}
           />
           <Route path="/dashboard/agents" element={<pages.Agents />} />
+          <Route path="/dashboard/company" element={<Company />} />
           <Route path="/dashboard/riders" element={<pages.Riders />} />
           <Route path="/dashboard/vendors" element={<pages.Vendors />} />
           <Route

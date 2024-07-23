@@ -14,9 +14,8 @@ import { PaginationDemo } from "@/pages/Home/components/Pagination";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import TableSkeleton from "@/skeletons/TableSkeleton";
-import { Link } from "react-router-dom";
 
-export function AgentsTable() {
+export function CompanyTable() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -31,15 +30,15 @@ export function AgentsTable() {
       <div className="flex flex-wrap items-center justify-between mb-6">
         <div className="md:mt-[70px] md:mb-10">
           <h1 className="font-bold text-[24px] text-[#230740]">
-            Total Company Registered (50)
+            Total Agents Registered (50)
           </h1>
         </div>
 
         <div className="flex items-center gap-4 mt-5">
           <div>
-            <Link to="/dashboard/company-registration">
-              <span className="text-tertiary font-medium">+ Add company</span>
-            </Link>
+            <span className="text-tertiary font-medium">
+              + Add agent
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <FaRegTrashAlt className="text-tertiary" />
@@ -55,13 +54,13 @@ export function AgentsTable() {
         <TableHeader className="w-full bg-[#72459f] text-white border-gray-300 font-bold text-[17px] uppercase">
           <TableRow className="border-b border-gray-300">
             <TableHead className="w-[100px] text-white font-bold">
-              Company Name
+              Name
             </TableHead>
             <TableHead className=" text-white font-bold">Phone</TableHead>
             <TableHead className=" text-white font-bold">Email</TableHead>
-            <TableHead className=" text-white font-bold">Address</TableHead>
-            <TableHead className=" text-white font-bold">city</TableHead>
-            <TableHead className="py-6 text-white font-bold">state</TableHead>
+            <TableHead className=" text-white font-bold">Location</TableHead>
+            <TableHead className=" text-white font-bold">Shipment</TableHead>
+            <TableHead className="py-6 text-white font-bold">Payment</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

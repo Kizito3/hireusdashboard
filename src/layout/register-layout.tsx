@@ -15,7 +15,7 @@ export const RegisterLayout = () => {
         <div className=" py-10 px-6 sm:px-12">
           <div className="flex justify-between items-center mb-4">
             <div>
-              <button onClick={handleBack} className="border border-tertiary inline-flex items-center p-1">
+              <button onClick={handleBack} className="border border-tertiary inline-flex items-center p-1 rounded-full">
                 <MoveLeft size={30} className=" text-tertiary" />
               </button>
             </div>

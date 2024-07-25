@@ -10,6 +10,7 @@ import { Forgot } from "./pages/Auth/forgot";
 import { RegisterLayout } from "./layout/register-layout";
 import { Company } from "./pages/company";
 import { RegisterCompany } from "./pages/register-company";
+import { RegisterVendor } from "./pages/register-vendor";
 // import { ROLES } from "./library/constants";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           element={<pages.RiderRegistration />}
         />
         <Route path="/dashboard/company-registration" element={<RegisterCompany />}/>
+        <Route path="/dashboard/vendor-registration" element={<RegisterVendor />}/>
         {/* <Route path="/dashboard/register" element={<pages.RiderRegister />}/> */}
       </Route>
       {/* </Route> */}

@@ -53,7 +53,7 @@ export const NavItems: DataProps[] = [
   {
     navName: "Change Password",
     icon: CiLock,
-    link: "change-password",
+    link: "settings",
   },
   {
     navName: "Log Out",

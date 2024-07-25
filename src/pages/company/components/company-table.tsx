@@ -36,17 +36,15 @@ export function CompanyTable() {
 
         <div className="flex items-center gap-4 mt-5">
           <div>
-            <span className="text-tertiary font-medium">
-              + Add agent
-            </span>
+            <span className="text-tertiary font-bold text-xl">+ Add agent</span>
           </div>
           <div className="flex items-center gap-2">
             <FaRegTrashAlt className="text-tertiary" />
-            <span className="text-[#8770b7]">Delete</span>
+            <span className="text-[#8770b7] font-bold text-xl">Delete</span>
           </div>
           <div className="flex items-center gap-2">
-            <CiSearch />
-            <span>Search</span>
+            <CiSearch className="font-bold text-xl" size={25} />
+            <span className="text-tertiary font-bold text-xl">Search</span>
           </div>
         </div>
       </div>

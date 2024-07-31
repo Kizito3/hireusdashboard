@@ -53,7 +53,7 @@ export function TableData() {
             ? Array.from({ length: 7 }).map((_, i) => <TableSkeleton key={i} />)
             : invoices.map((invoice) => (
                 <TableRow
-                  key={invoice.vendor}
+                  key={invoice.id}
                   className="border-b border-gray-300 text-[16px]"
                 >
                   <TableCell className=" w-[250px] border-r border-gray-300 whitespace-nowrap">

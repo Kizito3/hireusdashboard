@@ -3,7 +3,7 @@ import axios from "axios";
 // const BASE_URL = "https://hireus-logistics-be0a8c34296c.herokuapp.com/api/v1";
 
 const BASE_URL =
-  process.env.NODE_ENV === "production"
+  import.meta.env.NODE_ENV === "production"
     ? "https://hireus-logistics-be0a8c34296c.herokuapp.com/api/v1"
     : "http://localhost:8000/api/v1";
 

@@ -7,6 +7,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import * as z from "zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
@@ -15,39 +16,24 @@ import { Label } from "@radix-ui/react-dropdown-menu";
 
 
 export const RegisterRider = () => {
-  // const [currentStep, setCurrentStep] = useState<number>(0);
-  // const [showNewComponent, setShowNewComponent] = useState<boolean>(false);
-  // const [isVerificationDetails, setIsVerificationDetails] = useState<boolean>(false)
 
-  const form = useForm({
+  const form = useForm<z.infer<typeof RegisterRiderSchema>>({
     resolver: zodResolver(RegisterRiderSchema),
     defaultValues: {
       first_name: "",
       last_name: "",
-      phone: "",
       email: "",
+      phone: "",
       guarantor: "",
       guarantor_phone: "",
-      guarantor_address: ""
+      guarantor_address: "",
     },
     mode: "onChange",
   });
 
-  const handleNextClick = () => {
-    form.trigger().then((isValid) => {
-      console.log("Validation status:", isValid);
-      console.log("Form errors:", form.formState.errors);
-      // if (isValid) {
-      //   setCurrentStep((prevStep) => prevStep + 1);
-      //   setShowNewComponent(true);
-      //   setIsVerificationDetails(true);
-      // }
-    });
-
-  };
-
-  const onSubmit = () => {
-    console.log("submitted");
+  const onSubmit = (values: z.infer<typeof RegisterRiderSchema>) => {
+    console.log(values);
+    form.reset();
   };
 
   return (
@@ -109,26 +95,6 @@ export const RegisterRider = () => {
             />
             <FormField
               control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
-                    Phone
-                  </Label>
-                  <FormControl>
-                    <Input
-                      placeholder="08164361932"
-                      {...field}
-                      type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem className="mb-8">
@@ -138,6 +104,26 @@ export const RegisterRider = () => {
                   <FormControl>
                     <Input
                       placeholder="Email"
+                      {...field}
+                      type="email"
+                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem className="mb-8">
+                  <Label className="text-[#424242] font-bold text-xl">
+                    Phone
+                  </Label>
+                  <FormControl>
+                    <Input
+                      placeholder="08164361932"
                       {...field}
                       type="text"
                       className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
@@ -209,11 +195,10 @@ export const RegisterRider = () => {
             />
 
             <Button
-              onClick={handleNextClick}
-              type="button"
+              type="submit"
               className="flex justify-center items-center sm:!w-[634px] w-full text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
             >
-              Continue
+              Submit
             </Button>
           </form>
         </Form>

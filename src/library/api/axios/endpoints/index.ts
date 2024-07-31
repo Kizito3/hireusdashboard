@@ -15,7 +15,7 @@ export const authEndpoints = {
   /** `PUT` : Reset password route*/
   reset_password: "/auth/reset-password",
 
-  /** `POST` : Verify reset passwor code route*/
+  /** `POST` : Verify reset password code route*/
   verify_password_reset_code: "/auth/verify-password-reset-code",
 
   /** `GET` : Resend reset password code route*/

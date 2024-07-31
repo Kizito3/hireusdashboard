@@ -34,17 +34,4 @@ export const RegisterSchema = z.object({
     .refine((val) => /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]*$/.test(val), {
       message: "Password must only contain Latin characters",
     }),
-
-  phone: z.array(
-    z
-      .string({ message: "Phone number is required" })
-      .min(10, { message: "Phone number must be at least 10 characters long" })
-      .max(15, {
-        message: "Phone number must be no more than 15 characters long",
-      })
-      .refine((val) => val.trim().length === val.length, {
-        message: "Phone number must not have leading or trailing spaces",
-      }),
-    { message: "Phone number is required" }
-  ),
 });

@@ -18,6 +18,7 @@ type RidersAccountTypes = {
  };
 
  type RiderAccountProps = {
+  id:number
   vendor: string;
   date: string;
   earnings: number;
@@ -26,6 +27,7 @@ type RidersAccountTypes = {
  }
 
  type RidersProps = {
+  id:number;
    name: string;
    number: number;
    email: string;
@@ -37,6 +39,7 @@ type RidersAccountTypes = {
    active?: string;
  };
 type TableProps = {
+  id:number;
   vendor: string;
   riders: string;
   dropoff: string;
@@ -51,6 +54,7 @@ type TableProps = {
 };
 
 type VendorProps = {
+  id:number;
   name: string;
   phone: number;
   email: string;

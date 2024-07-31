@@ -73,7 +73,7 @@ import { Link } from "react-router-dom";
                 ))
               : vendors.map((vendor) => (
                   <TableRow
-                    key={vendor.name}
+                    key={vendor.id}
                     className="border-b border-gray-300 font-bold text-[16px]"
                   >
                     <TableCell className=" w-[200px] border-r border-gray-300 whitespace-nowrap ">

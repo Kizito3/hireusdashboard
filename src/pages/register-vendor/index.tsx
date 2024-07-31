@@ -7,6 +7,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import * as z from 'zod'
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
@@ -14,7 +15,7 @@ import { Label } from "@radix-ui/react-dropdown-menu";
 import { VendorSchema } from "@/library/schema/vendor-schema";
 
 export const RegisterVendor = () => {
-  const form = useForm({
+  const form = useForm<z.infer<typeof VendorSchema>>({
     resolver: zodResolver(VendorSchema),
     defaultValues: {
       business_name: "",
@@ -28,15 +29,10 @@ export const RegisterVendor = () => {
     mode: "onChange",
   });
 
-  const handleNextClick = () => {
-    form.trigger().then((isValid) => {
-      console.log("Validation status:", isValid);
-      console.log("Form errors:", form.formState.errors);
-    });
-  };
 
-  const onSubmit = () => {
-    console.log("submitted");
+
+  const onSubmit = (values: z.infer<typeof VendorSchema>) => {
+    console.log("submitted", values);
   };
 
   return (
@@ -196,11 +192,10 @@ export const RegisterVendor = () => {
             />
 
             <Button
-              onClick={handleNextClick}
-              type="button"
+              type="submit"
               className="flex justify-center items-center sm:!w-[634px] w-full text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
             >
-              Continue
+              Submit
             </Button>
           </form>
         </Form>

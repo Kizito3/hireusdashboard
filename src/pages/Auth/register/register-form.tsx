@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   Form,
   FormControl,
@@ -7,6 +8,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import * as z from "zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -14,19 +16,23 @@ import { Link } from "react-router-dom";
 import { RegisterSchema } from "@/library/schema/register-schema";
 
 export const RegisterForm = () => {
-  const form = useForm({
+
+  const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
-      firstname: "",
-      lastname: "",
+      first_name: "",
+      last_name: "",
       email: "",
       password: "",
     },
   });
 
-  const onSubmit = () => {
+  const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
     console.log("submitted");
+    console.log(values);
+    form.reset();
   };
+
   return (
     <div className=" font-body flex sm:justify-start flex-col sm:items-start justify-center items-center w-full">
       <div className="mb-10">
@@ -38,12 +44,12 @@ export const RegisterForm = () => {
         <form onSubmit={form.handleSubmit(onSubmit)} className="">
           <FormField
             control={form.control}
-            name="firstname"
+            name="first_name"
             render={({ field }) => (
               <FormItem className="mb-8">
                 <FormControl>
                   <Input
-                    placeholder="Name"
+                    placeholder="FirstName"
                     {...field}
                     type="text"
                     className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold placeholder:text-xl"
@@ -56,12 +62,12 @@ export const RegisterForm = () => {
 
           <FormField
             control={form.control}
-            name="lastname"
+            name="last_name"
             render={({ field }) => (
               <FormItem className="mb-8">
                 <FormControl>
                   <Input
-                    placeholder="Last Name"
+                    placeholder="LastName"
                     {...field}
                     type="text"
                     className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold placeholder:text-xl"
@@ -81,6 +87,7 @@ export const RegisterForm = () => {
                   <Input
                     placeholder="Email address"
                     {...field}
+                    name="email"
                     type="email"
                     className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold placeholder:text-xl"
                   />
@@ -103,7 +110,6 @@ export const RegisterForm = () => {
                     className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold placeholder:text-xl"
                   />
                 </FormControl>
-
                 <FormMessage />
               </FormItem>
             )}

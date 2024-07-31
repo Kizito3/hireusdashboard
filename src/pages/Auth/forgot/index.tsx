@@ -7,20 +7,22 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import * as z from 'zod'
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ForgotPasswordSchema } from "@/library/schema/forgot-schema";
 
 export const Forgot = () => {
-  const form = useForm({
+  const form = useForm<z.infer<typeof ForgotPasswordSchema>>({
     resolver: zodResolver(ForgotPasswordSchema),
     defaultValues: {
       email: "",
     },
   });
 
-  const onSubmit = () => {
-    console.log("submitted");
+  const onSubmit = (values: z.infer<typeof ForgotPasswordSchema>) => {
+    console.log("submitted",values);
+    form.reset();
   };
   return (
     <div className="px-14 font-body flex justify-center flex-col items-center">

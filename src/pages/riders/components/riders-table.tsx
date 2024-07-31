@@ -77,7 +77,7 @@ export function RidersTable() {
             ? Array.from({ length: 7 }).map((_, i) => <TableSkeleton key={i} />)
             : riders.map((rider) => (
                 <TableRow
-                  key={rider.name}
+                  key={rider.id}
                   className="border-b border-gray-300 text-[16px]"
                 >
                   <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">

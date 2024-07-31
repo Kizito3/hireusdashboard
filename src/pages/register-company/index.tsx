@@ -7,6 +7,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import * as z from 'zod'
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
@@ -15,7 +16,7 @@ import { CompanySchema } from "@/library/schema/register-company";
 
 export const RegisterCompany = () => {
 
-  const form = useForm({
+  const form = useForm<z.infer<typeof CompanySchema>>({
     resolver: zodResolver(CompanySchema),
     defaultValues: {
       company_name: "",
@@ -30,15 +31,9 @@ export const RegisterCompany = () => {
     mode: "onChange",
   });
 
-  const handleNextClick = () => {
-    form.trigger().then((isValid) => {
-      console.log("Validation status:", isValid);
-      console.log("Form errors:", form.formState.errors);
-    });
-  };
-
-  const onSubmit = () => {
-    console.log("submitted");
+  const onSubmit = (values: z.infer<typeof CompanySchema>) => {
+    console.log("submitted", values);
+    form.reset();
   };
 
   return (
@@ -77,17 +72,17 @@ export const RegisterCompany = () => {
             />
             <FormField
               control={form.control}
-              name="email"
+              name="address_text"
               render={({ field }) => (
                 <FormItem className="mb-8">
                   <Label className="text-[#424242] font-bold text-xl">
-                    Email
+                    Address
                   </Label>
                   <FormControl>
                     <Input
                       placeholder="Victor@gmail.com"
                       {...field}
-                      type="email"
+                      type="text"
                       className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold "
                     />
                   </FormControl>
@@ -217,8 +212,8 @@ export const RegisterCompany = () => {
             />
 
             <Button
-              onClick={handleNextClick}
-              type="button"
+              
+              type="submit"
               className="flex justify-center items-center sm:!w-[634px] w-full text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
             >
               Continue

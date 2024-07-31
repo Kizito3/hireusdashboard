@@ -14,6 +14,7 @@ import { PaginationDemo } from "@/pages/Home/components/Pagination";
 import { CiSearch } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import TableSkeleton from "@/skeletons/TableSkeleton";
+import { Link } from "react-router-dom";
 
 export function CompanyTable() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -36,7 +37,11 @@ export function CompanyTable() {
 
         <div className="flex items-center gap-4 mt-5">
           <div>
-            <span className="text-tertiary font-bold text-xl">+ Add agent</span>
+            <Link to="/dashboard/add-agent">
+              <span className="text-tertiary font-bold text-xl">
+                + Add agent
+              </span>
+            </Link>
           </div>
           <div className="flex items-center gap-2">
             <FaRegTrashAlt className="text-tertiary" />
@@ -66,7 +71,7 @@ export function CompanyTable() {
             ? Array.from({ length: 5 }).map((_, i) => <TableSkeleton key={i} />)
             : vendors.map((vendor) => (
                 <TableRow
-                  key={vendor.name}
+                  key={vendor.id}
                   className="border-b border-gray-300 font-bold text-[16px]"
                 >
                   <TableCell className=" w-[200px] border-r border-gray-300 whitespace-nowrap ">

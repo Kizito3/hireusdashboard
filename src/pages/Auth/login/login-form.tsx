@@ -2,14 +2,16 @@ import { useForm } from "react-hook-form";
 import { LoginSchema } from "@/library/schema/login-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import * as z from "zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+// import { LoginSchema } from './../../../library/schema/login-schema';
 
 export const LoginForm = () => {
-  const form = useForm({
+  const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
       email: "",
@@ -17,9 +19,10 @@ export const LoginForm = () => {
     },
   });
 
-const onSubmit = () => {
-    console.log("submitted");
-}
+const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+  console.log(values);
+  form.reset();
+};
   return (
     <div className=" font-body flex sm:justify-start flex-col sm:items-start justify-center items-center w-full">
       <div className="mb-10">

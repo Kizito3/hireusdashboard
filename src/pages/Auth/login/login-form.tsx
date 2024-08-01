@@ -6,22 +6,43 @@ import * as z from "zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-// import { LoginSchema } from './../../../library/schema/login-schema';
+import { login } from "@/library/api";
+import { ToastContainer, toast, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export const LoginForm = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate();
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
+      account_type: "admin",
       email: "",
       password: "",
     },
   });
 
-const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-  console.log(values);
-  form.reset();
+const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
+  setIsLoading(true)
+  try {
+    const data = await login(values);
+    toast.success(data.data.message);
+    navigate("/dashboard");
+    console.log(data.data);
+    form.reset();
+
+  } catch (error: any) {
+    console.log('first', error)
+    const errorMessage =
+      error.response?.data?.message || "Registration failed. Please try again.";
+    toast.error(errorMessage);
+  } finally {
+    setIsLoading(false)
+  }
 };
   return (
     <div className=" font-body flex sm:justify-start flex-col sm:items-start justify-center items-center w-full">
@@ -84,7 +105,14 @@ const onSubmit = (values: z.infer<typeof LoginSchema>) => {
             type="submit"
             className="flex justify-center items-center sm:!w-[534px] w-full text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
           >
-            Login
+            {isLoading ? (
+              <span className="flex gap-2 items-center">
+                <Loader2 className="animate-spin" />
+                Please wait...
+              </span>
+            ) : (
+              "Login"
+            )}
           </Button>
           <div className="my-8 gap-2 before:border-t before:flex-1 items-center before:border-gray-300 after:border-t flex after:flex-1 after:border-gray-300">
             <p className="font-bold">or</p>
@@ -100,9 +128,20 @@ const onSubmit = (values: z.infer<typeof LoginSchema>) => {
         </div>
         <div className="font-bold flex gap-2 items-center">
           <p className="text-[#474747] text-[17px]">Yet to register</p>
-          <Link to="auth/register" className="underline text-[18px] text-[#8f42db]">Signup</Link>
+          <Link
+            to="auth/register"
+            className="underline text-[18px] text-[#8f42db]"
+          >
+            Signup
+          </Link>
         </div>
       </Form>
+      <ToastContainer
+        position="bottom-right"
+        className="font-body font-bold"
+        stacked
+        transition={Slide}
+      />
     </div>
   );
 };

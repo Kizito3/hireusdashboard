@@ -4,6 +4,7 @@ import { z } from "zod";
 // const ACCEPTED_FILES_TYPES = ["application/pdf"];
 
 export const RegisterRiderSchema = z.object({
+  // account_type: z.string(),
   first_name: z
     .string({ message: "Fullname is required" })
     .min(2, { message: "Fullname must be at least 2 characters." }),

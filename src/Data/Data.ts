@@ -26,6 +26,11 @@ export const NavItems: DataProps[] = [
     link: "shipment",
   },
   {
+    navName: "Verify",
+    icon: FaRegFolderClosed,
+    link: "/auth/verify-email",
+  },
+  {
     navName: "Riders",
     icon: MdPedalBike,
     link: "riders",

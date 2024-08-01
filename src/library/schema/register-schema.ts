@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const RegisterSchema = z.object({
+  account_type : z.string(),
   first_name: z
     .string({ message: "Firstname is required" })
     .min(2, { message: "Firstname must be at least 2 characters." }),
@@ -12,6 +13,11 @@ export const RegisterSchema = z.object({
   email: z
     .string({ message: "Enter is required" })
     .email({ message: "Enter a valid email address" }),
+
+  // terms_of_service: z.boolean({
+  //   message: "Please aceept our teams of service",
+  // }),
+
   password: z
     .string({ message: "Password is required" })
     .min(6, {
@@ -34,4 +40,17 @@ export const RegisterSchema = z.object({
     .refine((val) => /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]*$/.test(val), {
       message: "Password must only contain Latin characters",
     }),
+
+  phone: z.array(
+    z
+      .string({ message: "Phone number is required" })
+      .min(10, { message: "Phone number must be at least 10 characters long" })
+      .max(15, {
+        message: "Phone number must be no more than 15 characters long",
+      })
+      .refine((val) => val.trim().length === val.length, {
+        message: "Phone number must not have leading or trailing spaces",
+      }),
+    { message: "Phone number is required" }
+  ),
 });

@@ -76,7 +76,7 @@ type shipmentProps = {
   to?: string;
 };
 
-type Roles = "admin" | "x-admin" | "company" | "manager";
+type Roles = "admin" | "x-admin" | "company" | "manager"| "personal";
 
 type User = {
   _id: string;

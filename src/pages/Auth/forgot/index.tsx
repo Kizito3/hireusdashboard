@@ -7,7 +7,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import * as z from 'zod'
+import * as z from 'zod';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ForgotPasswordSchema } from "@/library/schema/forgot-schema";

@@ -8,8 +8,11 @@ import {
 import { Button } from "@/components/ui/button";
 
 export function VerifyEmail() {
+  const onSubmit = async () => {
+
+  }
   return (
-    <div className="flex justify-center items-center flex-col font-body">
+    <div className="flex justify-start items-start flex-col font-body">
       <div className="mb-10">
         <h2 className="sm:text-5xl text-3xl font-bold text-tertiary capitalize">
           Verify Your email
@@ -38,7 +41,10 @@ export function VerifyEmail() {
           />
         </InputOTPGroup>
       </InputOTP>
-      <Button className="flex justify-center items-center mt-5 text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border">
+      <Button 
+      onClick={onSubmit}
+      type="submit"
+      className="flex justify-center items-center mt-5 text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border">
         Submit
       </Button>
     </div>

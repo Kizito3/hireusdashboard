@@ -1,5 +1,4 @@
-
-import { ToastContainer, toast, Slide } from "react-toastify";
+import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Button } from "@/components/ui/button";
@@ -15,48 +14,18 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
-import { useState } from "react";
-import { resendEmailToken} from "@/library/api";
 import { Loader2 } from "lucide-react";
-import { useEmailVerification } from "./lib/useEmailVerification";
+import { usePasswordVerification } from "./lib/usePasswordVerification";
+
+export function PasswordResetEmail() {
 
 
-
-
-export function VerifyEmail() {
-
-  const [isResend, setIsResend] = useState<boolean>(false);
-  const {isLoading, form, onSubmit} = useEmailVerification();
-
-  const handleResend = async () => {
-    setIsResend(true);
-    try {
-       const _ = localStorage.getItem("token");
-      const data = await resendEmailToken(_!);
-      const token = data.headers["authorization"];
-      localStorage.setItem("token",token);
-      localStorage.removeItem('token');
-      toast.success(data.data.message);
-      // setTimeout(() => {
-      //   navigate("/dashboard");
-      //   form.reset();
-      // }, 3000);
-    } catch (error: any) {
-      console.log("error", error);
-      const errorMessage =
-        error.response?.data?.message ||
-        "Registration failed. Please try again.";
-      toast.error(errorMessage);
-    } finally {
-      setIsResend(false);
-    }
-  };
-
+  const { form, isLoading, onSubmit } = usePasswordVerification();
   return (
     <div className="flex justify-start items-start flex-col font-body">
       <div className="mb-10">
         <h2 className="sm:text-5xl text-3xl font-bold text-tertiary capitalize">
-          Verify Your email
+          Verify Your Password
         </h2>
         <p className="mt-5 font-bold">
           Please enter the OTP we sent to your email address
@@ -72,7 +41,7 @@ export function VerifyEmail() {
             name="pin"
             render={({ field }) => (
               <FormItem>
-                
+                {/* <FormLabel>One-Time Password</FormLabel> */}
                 <FormControl>
                   <InputOTP maxLength={4} {...field}>
                     <div className="flex justify-between items-center gap-5 sm:gap-40">
@@ -118,20 +87,20 @@ export function VerifyEmail() {
             )}
           </Button>
         </form>
-          <button
-            onClick={handleResend}
-            type="submit"
-            className="whitespace-nowrap"
-          >
-            {isResend ? (
-              <span className="flex gap-3 items-center">
-                <Loader2 className="animate-spin h-6 w-6 " />
-                Please wait...
-              </span>
-            ) : (
-              "Resend code"
-            )}
-          </button>
+        {/* <button
+          onClick={handleResend}
+          type="submit"
+          className="whitespace-nowrap"
+        >
+          {isResend ? (
+            <span className="flex gap-3 items-center">
+              <Loader2 className="animate-spin h-6 w-6 " />
+              Please wait...
+            </span>
+          ) : (
+            "Resend code"
+          )}
+        </button> */}
         <ToastContainer
           position="bottom-right"
           className="font-body font-bold"

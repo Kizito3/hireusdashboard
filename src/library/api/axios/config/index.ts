@@ -7,13 +7,11 @@ import axios from "axios";
 //     ? "https://hireuslogistics-6a4b0c480992.herokuapp.com/api/v1"
 //     : "http://localhost:8000/api/v1";
 const BASE_URL = "https://hireuslogistics-6a4b0c480992.herokuapp.com/api/v1";
-const token = localStorage.getItem("token");
 
 export const axiosWithToken = axios.create({
   baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
-    Authorization: "Bearer " + token,
   },
 });
 

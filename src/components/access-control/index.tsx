@@ -16,7 +16,7 @@ export const RequireAuth = ({ allowedRoles }: { allowedRoles?: Roles[] }) => {
   return profile?.roles?.find((role) => allowedRoles?.includes(role)) ? (
     <Outlet />
   ) : accessToken ? (
-    <Navigate to="/unauthorized" state={{ from: location }} replace />
+    <Navigate to="/dashboard/unauthorized" state={{ from: location }} replace />
   ) : (
     <Navigate to="/" state={{ from: location }} replace />
   );

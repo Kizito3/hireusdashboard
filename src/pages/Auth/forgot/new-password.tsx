@@ -6,13 +6,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { ToastContainer, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import { useChangePassword } from "./lib/useChangePassword";
+import { useResetPassword } from "./lib/useResetPassword";
 
-export const Forgot = () => {
-  const { form, isLoading, onSubmit } = useChangePassword();
+export const ChangePassword = () => {
+  const { form, isLoading, onSubmit } = useResetPassword();
 
   return (
     <div className="px-14 font-body flex justify-center flex-col items-center">
@@ -25,14 +26,31 @@ export const Forgot = () => {
         <form onSubmit={form.handleSubmit(onSubmit)} className="">
           <FormField
             control={form.control}
-            name="email"
+            name="new_password"
             render={({ field }) => (
               <FormItem className="mb-8">
                 <FormControl>
                   <Input
-                    placeholder="Enter your email address"
+                    placeholder="Enter your new password"
                     {...field}
-                    type="email"
+                    type="password"
+                    className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold placeholder:text-xl"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="confirm_password"
+            render={({ field }) => (
+              <FormItem className="mb-8">
+                <FormControl>
+                  <Input
+                    placeholder="Confirm your new password"
+                    {...field}
+                    type="password"
                     className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold placeholder:text-xl"
                   />
                 </FormControl>

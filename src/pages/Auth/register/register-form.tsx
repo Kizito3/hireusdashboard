@@ -1,10 +1,6 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { ToastContainer, toast, Slide } from "react-toastify";
+import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link, useNavigate } from "react-router-dom";
-import * as z from "zod";
+import { Link } from "react-router-dom";
 
 import {
   Form,
@@ -16,46 +12,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import { RegisterSchema } from "@/library/schema/register-schema";
-import { signup } from "@/library/api";
+import { useSignUp } from "./lib/useSignUp";
 
 export const RegisterForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
-
-  const form = useForm<z.infer<typeof RegisterSchema>>({
-    resolver: zodResolver(RegisterSchema),
-    defaultValues: {
-      account_type: "admin",
-      first_name: "",
-      last_name: "",
-      email: "",
-      password: "",
-      phone: ["09043565256"],
-      // terms_of_service: true,
-    },
-  });
-
-  const onSubmit = async (values: z.infer<typeof RegisterSchema>) => {
-    setIsLoading(true);
-    try {
-      const data = await signup(values);
-      console.log("data", data.data);
-      const token = data.headers["authorization"];
-      localStorage.setItem("token", token);
-      toast.success(data.data.message);
-      navigate("/auth/verify-email");
-      form.reset();
-    } catch (error: any) {
-      console.log("error", error);
-       const errorMessage =
-         error.response?.data?.message ||
-         "Registration failed. Please try again.";
-       toast.error(errorMessage);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const { isLoading, form, onSubmit } = useSignUp();
 
   return (
     <div className="font-body flex sm:justify-start flex-col sm:items-start justify-center items-center w-full">

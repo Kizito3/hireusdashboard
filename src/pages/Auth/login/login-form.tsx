@@ -1,51 +1,29 @@
-import { useForm } from "react-hook-form";
-import { LoginSchema } from "@/library/schema/login-schema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { login } from "@/library/api";
-import { ToastContainer, toast, Slide } from "react-toastify";
+import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import { useLogin } from "./lib/useLogin";
 
 export const LoginForm = () => {
-  const [isLoading, setIsLoading] = useState(false)
-  const navigate = useNavigate();
-  const form = useForm<z.infer<typeof LoginSchema>>({
-    resolver: zodResolver(LoginSchema),
-    defaultValues: {
-      account_type: "admin",
-      email: "",
-      password: "",
-    },
-  });
-
-const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
-  setIsLoading(true)
-  try {
-    const data = await login(values);
-    toast.success(data.data.message);
-    navigate("/dashboard");
-    console.log(data.data);
-    form.reset();
-
-  } catch (error: any) {
-    console.log('first', error)
-    const errorMessage =
-      error.response?.data?.message || "Registration failed. Please try again.";
-    toast.error(errorMessage);
-  } finally {
-    setIsLoading(false)
-  }
-};
+  const {
+    isLoading,
+    form,
+    onSubmit,
+    persistLogin,
+    toggleIsTrustedDeviceLogin,
+  } = useLogin();
   return (
-    <div className=" font-body flex sm:justify-start flex-col sm:items-start justify-center items-center w-full">
+    <div className="font-body flex sm:justify-start flex-col sm:items-start justify-center items-center w-full">
       <div className="mb-10">
         <h2 className="sm:text-5xl text-3xl font-bold text-tertiary capitalize">
           Login to your account
@@ -92,7 +70,14 @@ const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
 
           <div className="mb-8 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Checkbox /> <span className="font-bold ">Stay Logged In</span>
+              <input
+                type="checkbox"
+                name="trust device"
+                id="trust-device"
+                checked={persistLogin}
+                onChange={toggleIsTrustedDeviceLogin}
+              />
+              <span className="font-bold ">Stay Logged In</span>
             </div>
             <div>
               <Link to="auth/forgot-password" className="font-bold">

@@ -24,3 +24,7 @@ type EmailPayload = {
   account_type: string;
   email: string;
 };
+ type ResetPassword = {
+  new_password:  string;
+  confirm_password: string;
+ }

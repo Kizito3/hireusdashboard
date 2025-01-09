@@ -10,6 +10,7 @@ interface AuthStore {
   endSession(): void;
 }
 
+
 interface UserStore {
   profile: User | null;
 

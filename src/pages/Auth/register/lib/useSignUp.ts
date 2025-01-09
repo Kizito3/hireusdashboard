@@ -1,6 +1,7 @@
 import { signup } from "@/library/api";
 import { RegisterSchema } from "@/library/schema/register-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { AxiosError } from "axios";
 import { useState } from "react";
 import { useForm, UseFormReturn } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -42,10 +43,10 @@ export const useSignUp = (): useSignUpReturn => {
         navigate("/auth/verify-email");
         form.reset();
       }, 3000);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log("error", error);
       const errorMessage =
-        error.response?.data?.message ||
+        (error instanceof AxiosError && error.response?.data?.message) ||
         "Registration failed. Please try again.";
       toast.error(errorMessage);
     } finally {

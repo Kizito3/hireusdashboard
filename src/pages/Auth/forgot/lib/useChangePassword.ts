@@ -6,10 +6,11 @@ import { useForm, UseFormReturn } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { z } from "zod";
+import { AxiosError } from "axios";
 interface useChangePasswordReturn {
   form: UseFormReturn<z.infer<typeof ForgotPasswordSchema>>;
   isLoading: boolean;
-  onSubmit: (values: z.infer<typeof ForgotPasswordSchema>) => Promise<void>
+  onSubmit: (values: z.infer<typeof ForgotPasswordSchema>) => Promise<void>;
 }
 export const useChangePassword = (): useChangePasswordReturn => {
   const navigate = useNavigate();
@@ -40,10 +41,10 @@ export const useChangePassword = (): useChangePasswordReturn => {
       }, 3000);
 
       form.reset();
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log("error", error);
       const errorMessage =
-        error.response?.data?.message ||
+        (error instanceof AxiosError && error.response?.data?.message) ||
         "Registration failed. Please try again.";
       toast.error(errorMessage);
     } finally {

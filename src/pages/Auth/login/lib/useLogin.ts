@@ -2,6 +2,7 @@ import { login } from "@/library/api";
 import { useAuthStore, useProfileStore } from "@/library/hooks";
 import { LoginSchema } from "@/library/schema/login-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import { useForm, UseFormReturn } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -29,22 +30,23 @@ export const useLogin = (): useLoginReturn => {
       password: "",
     },
   });
-
   const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
     setIsLoading(true);
     try {
       const data = await login(values);
       setAuth(data.headers["authorization"]);
-      setProfile(data.data.data?.user!);
+      if (data.data.data?.user) {
+        setProfile(data.data.data.user);
+      }
       localStorage.setItem("isLoggedIn", JSON.stringify(data.data.success));
       toast.success(data.data.message);
       navigate("/dashboard");
       console.log(data.data);
       form.reset();
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log("first", error);
       const errorMessage =
-        error.response?.data?.message ||
+        (error instanceof AxiosError && error.response?.data?.message) ||
         "Registration failed. Please try again.";
       toast.error(errorMessage);
     } finally {

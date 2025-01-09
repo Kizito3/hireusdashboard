@@ -5,7 +5,7 @@ export default function EachCard({
   info,
   icon,
   index,
-}: CardProps & { index ? : number }) {
+}: CardProps & { index?: number }) {
   const Icon = icon;
   return (
     <div

@@ -1,6 +1,5 @@
-// import avatar from '/images/avatarF.png';
 import { FaBell } from "react-icons/fa6";
-import MyAvatar from './Avatar';
+import MyAvatar from "./Avatar";
 
 export default function TopBar() {
   return (
@@ -20,8 +19,10 @@ export default function TopBar() {
           <div className="flex items-center gap-10 whitespace-nowrap">
             <div className="relative">
               <FaBell className="text-[#25436e]" size={36} />
-              <div className="absolute -top-1 right-0 h-4 w-4 rounded-full flex justify-center items-center bg-[#fd591b]">
-                <span className="text-sm text-white">0</span>
+              <div className="absolute -top-1 right-0 h-6 w-6 rounded-full flex justify-center items-center bg-[#fd591b]">
+                <span className="text-sm text-white flex justify-center items-center">
+                  1
+                </span>
               </div>
             </div>
             <MyAvatar />

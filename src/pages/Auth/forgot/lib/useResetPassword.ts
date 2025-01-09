@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ForgotSchema } from "@/library/schema/reset-schema";
 import { resetPassword } from "@/library/api";
+import { AxiosError } from "axios";
 
 interface UseResetPasswordReturn {
   form: UseFormReturn<z.infer<typeof ForgotSchema>>;
@@ -28,20 +29,20 @@ export const useResetPassword = (): UseResetPasswordReturn => {
   const onSubmit = async (values: z.infer<typeof ForgotSchema>) => {
     setIsLoading(true);
     try {
-        const _ = localStorage.getItem('token')
+      const _ = localStorage.getItem("token");
       const data = await resetPassword(values, _!);
       console.log("first", data.data.message);
-      localStorage.removeItem('token');
+      localStorage.removeItem("token");
       toast.success(data.data.message);
       setTimeout(() => {
         navigate("/");
         form.reset();
       }, 3000);
       form.reset();
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log("error", error);
       const errorMessage =
-        error.response?.data?.message ||
+        (error instanceof AxiosError && error.response?.data?.message) ||
         "Password reset failed. Please try again.";
       toast.error(errorMessage);
     } finally {

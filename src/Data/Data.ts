@@ -70,7 +70,7 @@ export const CardInfo: CardProps[] = [
   {
     total: 500,
     icon: MdGroups,
-    info: "Vendors", 
+    info: "Vendors",
   },
   {
     total: 5000,
@@ -86,7 +86,7 @@ export const CardInfo: CardProps[] = [
 
 export const invoices: TableProps[] = [
   {
-    id:1,
+    id: 1,
     vendor: "Gloria Uwana",
     riders: "Victor John",
     dropoff: "10 Ire Akari Estate, Isolo",
@@ -100,7 +100,7 @@ export const invoices: TableProps[] = [
     link: "vendors-profile",
   },
   {
-    id:2,
+    id: 2,
     vendor: "Gloria Uwana",
     riders: "Victor John",
     dropoff: "10 Ire Akari Estate, Isolo",
@@ -114,7 +114,7 @@ export const invoices: TableProps[] = [
     link: "vendors-profile",
   },
   {
-    id:3,
+    id: 3,
     vendor: "Gloria Uwana",
     riders: "Victor John",
     dropoff: "10 Ire Akari Estate, Isolo",
@@ -128,7 +128,7 @@ export const invoices: TableProps[] = [
     link: "vendors-profile",
   },
   {
-    id:4,
+    id: 4,
     vendor: "Gloria Uwana",
     riders: "Victor John",
     dropoff: "10 Ire Akari Estate, Isolo",
@@ -142,7 +142,7 @@ export const invoices: TableProps[] = [
     link: "vendors-profile",
   },
   {
-    id:5,
+    id: 5,
     vendor: "Gloria Uwana",
     riders: "Victor John",
     dropoff: "10 Ire Akari Estate, Isolo",
@@ -156,7 +156,7 @@ export const invoices: TableProps[] = [
     link: "vendors-profile",
   },
   {
-    id:6,
+    id: 6,
     vendor: "Gloria Uwana",
     riders: "Victor John",
     dropoff: "10 Ire Akari Estate, Isolo",
@@ -170,7 +170,7 @@ export const invoices: TableProps[] = [
     link: "vendors-profile",
   },
   {
-    id:7,
+    id: 7,
     vendor: "Gloria Uwana",
     riders: "Victor John",
     dropoff: "10 Ire Akari Estate, Isolo",
@@ -184,7 +184,7 @@ export const invoices: TableProps[] = [
     link: "vendors-profile",
   },
   {
-    id:8,
+    id: 8,
     vendor: "Gloria Uwana",
     riders: "Victor John",
     dropoff: "10 Ire Akari Estate, Isolo",
@@ -201,7 +201,7 @@ export const invoices: TableProps[] = [
 
 export const riders: RidersProps[] = [
   {
-    id:1,
+    id: 1,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -212,7 +212,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:2,
+    id: 2,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -223,7 +223,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:3,
+    id: 3,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -234,7 +234,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:4,
+    id: 4,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -245,7 +245,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:5,
+    id: 5,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -256,7 +256,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:6,
+    id: 6,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -267,7 +267,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:7,
+    id: 7,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -278,7 +278,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:8,
+    id: 8,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -289,7 +289,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:9,
+    id: 9,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -300,7 +300,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:10,
+    id: 10,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -311,7 +311,7 @@ export const riders: RidersProps[] = [
     active: "Active",
   },
   {
-    id:11,
+    id: 11,
     name: "Victor john",
     number: +2348164361932,
     email: "johnvictor@gmail.com",
@@ -325,7 +325,7 @@ export const riders: RidersProps[] = [
 
 export const vendors: VendorProps[] = [
   {
-    id:1,
+    id: 1,
     name: "Gloria Uwana",
     phone: +2348164361932,
     email: "gloriauwana@gmail.com",
@@ -334,7 +334,7 @@ export const vendors: VendorProps[] = [
     shipment: 56,
   },
   {
-    id:2,
+    id: 2,
     name: "Gloria Uwana",
     phone: +2348164361932,
     email: "gloriauwana@gmail.com",
@@ -343,7 +343,7 @@ export const vendors: VendorProps[] = [
     shipment: 56,
   },
   {
-    id:3,
+    id: 3,
     name: "Gloria Uwana",
     phone: +2348164361932,
     email: "gloriauwana@gmail.com",
@@ -352,7 +352,7 @@ export const vendors: VendorProps[] = [
     shipment: 56,
   },
   {
-    id:4,
+    id: 4,
     name: "Gloria Uwana",
     phone: +2348164361932,
     email: "gloriauwana@gmail.com",
@@ -361,7 +361,7 @@ export const vendors: VendorProps[] = [
     shipment: 56,
   },
   {
-    id:5,
+    id: 5,
     name: "Gloria Uwana",
     phone: +2348164361932,
     email: "gloriauwana@gmail.com",
@@ -475,7 +475,7 @@ export const RiderEarnings: RiderAccountProps[] = [
     time: "3:00pm",
   },
   {
-    id:3 ,
+    id: 3,
     vendor: "John Victor",
     date: "01/12/2024",
     earnings: 1500,
@@ -491,7 +491,7 @@ export const RiderEarnings: RiderAccountProps[] = [
     time: "3:00pm",
   },
   {
-    id:5 ,
+    id: 5,
     vendor: "John Victor",
     date: "01/12/2024",
     earnings: 1500,

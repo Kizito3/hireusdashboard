@@ -13,6 +13,7 @@ interface useSignUpReturn {
   isLoading: boolean;
   onSubmit: (values: z.infer<typeof RegisterSchema>) => Promise<void>;
 }
+
 export const useSignUp = (): useSignUpReturn => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();

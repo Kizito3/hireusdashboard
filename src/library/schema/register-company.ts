@@ -1,4 +1,4 @@
-import {z} from 'zod'
+import { z } from "zod";
 
 export const CompanySchema = z.object({
   company_name: z
@@ -6,7 +6,10 @@ export const CompanySchema = z.object({
     .min(2, { message: "Company name must be at least 2 characters." }),
   email: z
     .string({ message: "Email is required" })
-    .email({ message: "Please enter a valid email address" }),
+    .email({ message: "Please enter a valid email address" })
+    .refine((val) => val.endsWith("@gmail.com"), {
+      message: "Email must end with @gmail.com or @yahoo.com",
+    }),
   address_text: z
     .string({ message: "Address is required" })
     .min(2, { message: "Address must be at least 2 characters." }),

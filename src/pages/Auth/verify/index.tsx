@@ -1,4 +1,3 @@
-
 import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -16,35 +15,32 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { useState } from "react";
-import { resendEmailToken} from "@/library/api";
+import { resendEmailToken } from "@/library/api";
 import { Loader2 } from "lucide-react";
 import { useEmailVerification } from "./lib/useEmailVerification";
-
-
-
+import { AxiosError } from "axios";
 
 export function VerifyEmail() {
-
   const [isResend, setIsResend] = useState<boolean>(false);
-  const {isLoading, form, onSubmit} = useEmailVerification();
+  const { isLoading, form, onSubmit } = useEmailVerification();
 
   const handleResend = async () => {
     setIsResend(true);
     try {
-       const _ = localStorage.getItem("token");
+      const _ = localStorage.getItem("token");
       const data = await resendEmailToken(_!);
       const token = data.headers["authorization"];
-      localStorage.setItem("token",token);
-      localStorage.removeItem('token');
+      localStorage.setItem("token", token);
+      localStorage.removeItem("token");
       toast.success(data.data.message);
       // setTimeout(() => {
       //   navigate("/dashboard");
       //   form.reset();
       // }, 3000);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.log("error", error);
       const errorMessage =
-        error.response?.data?.message ||
+        (error instanceof AxiosError && error.response?.data?.message) ||
         "Registration failed. Please try again.";
       toast.error(errorMessage);
     } finally {
@@ -55,7 +51,7 @@ export function VerifyEmail() {
   return (
     <div className="flex justify-start items-start flex-col font-body">
       <div className="mb-10">
-        <h2 className="sm:text-5xl text-3xl font-bold text-tertiary capitalize">
+        <h2 className="md:text-5xl text-2xl font-bold text-tertiary capitalize">
           Verify Your email
         </h2>
         <p className="mt-5 font-bold">
@@ -72,7 +68,6 @@ export function VerifyEmail() {
             name="pin"
             render={({ field }) => (
               <FormItem>
-                
                 <FormControl>
                   <InputOTP maxLength={4} {...field}>
                     <div className="flex justify-between items-center gap-5 sm:gap-40">
@@ -105,7 +100,7 @@ export function VerifyEmail() {
           />
 
           <Button
-            className="flex justify-center items-center mt-5 text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
+            className="flex justify-center items-center mt-5 text-xl md:h-13 h-12 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
             type="submit"
           >
             {isLoading ? (
@@ -118,20 +113,20 @@ export function VerifyEmail() {
             )}
           </Button>
         </form>
-          <button
-            onClick={handleResend}
-            type="submit"
-            className="whitespace-nowrap"
-          >
-            {isResend ? (
-              <span className="flex gap-3 items-center">
-                <Loader2 className="animate-spin h-6 w-6 " />
-                Please wait...
-              </span>
-            ) : (
-              "Resend code"
-            )}
-          </button>
+        <button
+          onClick={handleResend}
+          type="submit"
+          className="whitespace-nowrap"
+        >
+          {isResend ? (
+            <span className="flex gap-3 items-center">
+              <Loader2 className="animate-spin h-6 w-6 " />
+              Please wait...
+            </span>
+          ) : (
+            "Resend code"
+          )}
+        </button>
         <ToastContainer
           position="bottom-right"
           className="font-body font-bold"

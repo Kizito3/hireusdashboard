@@ -44,7 +44,6 @@ export const useLogin = (): useLoginReturn => {
       console.log(data.data);
       form.reset();
     } catch (error: unknown) {
-      console.log("first", error);
       const errorMessage =
         (error instanceof AxiosError && error.response?.data?.message) ||
         "Registration failed. Please try again.";

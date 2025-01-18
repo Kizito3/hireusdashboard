@@ -18,7 +18,7 @@ export const ChangePassword = () => {
   return (
     <div className="px-14 font-body flex justify-center flex-col items-center">
       <div className="mb-10">
-        <h2 className="sm:text-5xl text-3xl font-bold text-tertiary capitalize">
+        <h2 className="md:text-5xl text-2xl font-bold text-tertiary capitalize">
           Reset Your password
         </h2>
       </div>
@@ -34,7 +34,7 @@ export const ChangePassword = () => {
                     placeholder="Enter your new password"
                     {...field}
                     type="password"
-                    className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold placeholder:text-xl"
+                    className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold md:placeholder:text-[16px] placeholder:text-sm"
                   />
                 </FormControl>
                 <FormMessage />
@@ -51,7 +51,7 @@ export const ChangePassword = () => {
                     placeholder="Confirm your new password"
                     {...field}
                     type="password"
-                    className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold placeholder:text-xl"
+                    className="sm:!w-[534px] outline-black h-16 placeholder:text-black font-bold md:placeholder:text-[16px] placeholder:text-sm"
                   />
                 </FormControl>
                 <FormMessage />
@@ -61,7 +61,7 @@ export const ChangePassword = () => {
 
           <Button
             type="submit"
-            className="flex justify-center items-center sm:!w-[534px] w-full text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
+            className="flex justify-center items-center sm:!w-[534px] w-full md:text-[16px] text-sm md:h-14 h-12 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
           >
             {isLoading ? (
               <span className="flex gap-2 items-center">

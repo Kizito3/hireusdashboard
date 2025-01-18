@@ -1,5 +1,3 @@
-
-
 import {
   Table,
   TableBody,
@@ -59,10 +57,12 @@ export function AccountEarnings() {
 
         <TableBody>
           {loading
-            ? Array.from({ length: 5 }).map((_, i) => <AccountSkeleton key={i} />)
+            ? Array.from({ length: 5 }).map((_, i) => (
+                <AccountSkeleton key={i} />
+              ))
             : RiderEarnings.map((rider) => (
                 <TableRow
-                  key={rider.vendor}
+                  key={rider.id}
                   className="border-b border-gray-300 text-[16px]"
                 >
                   <TableCell className="font-medium w-[200px] border-r border-gray-300 whitespace-nowrap ">

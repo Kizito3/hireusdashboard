@@ -18,16 +18,14 @@ import { Loader2 } from "lucide-react";
 import { usePasswordVerification } from "./lib/usePasswordVerification";
 
 export function PasswordResetEmail() {
-
-
   const { form, isLoading, onSubmit } = usePasswordVerification();
   return (
-    <div className="flex justify-start items-start flex-col font-body">
-      <div className="mb-10">
-        <h2 className="sm:text-5xl text-3xl font-bold text-tertiary capitalize">
+    <div className="flex md:justify-start md:items-start justify-center items-center flex-col font-body">
+      <div className="mb-10 flex flex-col md:justify-start md:items-start justify-center items-center">
+        <h2 className="md:text-5xl text-2xl font-bold text-tertiary capitalize">
           Verify Your Password
         </h2>
-        <p className="mt-5 font-bold">
+        <p className="mt-5 font-bold text-center md:text-start">
           Please enter the OTP we sent to your email address
         </p>
       </div>
@@ -73,19 +71,21 @@ export function PasswordResetEmail() {
             )}
           />
 
-          <Button
-            className="flex justify-center items-center mt-5 text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
-            type="submit"
-          >
-            {isLoading ? (
-              <span className="flex gap-3 items-center">
-                <Loader2 className="animate-spin h-6 w-6 " />
-                Please wait...
-              </span>
-            ) : (
-              "Submit"
-            )}
-          </Button>
+          <div className="flex justify-center items-center md:justify-start md:items-start">
+            <Button
+              className="flex justify-center items-center mt-5 md:text-[16px] text-sm h-10 w-36 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
+              type="submit"
+            >
+              {isLoading ? (
+                <span className="flex gap-3 items-center">
+                  <Loader2 className="animate-spin h-6 w-6 " />
+                  Please wait...
+                </span>
+              ) : (
+                "Submit"
+              )}
+            </Button>
+          </div>
         </form>
         {/* <button
           onClick={handleResend}

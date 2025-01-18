@@ -71,7 +71,7 @@ export function AgentsTable() {
             ? Array.from({ length: 5 }).map((_, i) => <TableSkeleton key={i} />)
             : vendors.map((vendor) => (
                 <TableRow
-                  key={vendor.name}
+                  key={vendor.id}
                   className="border-b border-gray-300 font-bold text-[16px]"
                 >
                   <TableCell className=" w-[200px] border-r border-gray-300 whitespace-nowrap ">

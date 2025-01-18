@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -8,13 +8,13 @@ import {
   TableHeader,
   TableRow,
 } from "../../../../@/components/ui/table";
-import avatarF from "/images/avatarF.png"; 
+import avatarF from "/images/avatarF.png";
 import { invoices } from "@/Data/Data";
 import avatarM from "/images/avatarM.png";
 import { PaginationDemo } from "./Pagination";
 import { Link } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa";
-import TableSkeleton from '@/skeletons/TableSkeleton';
+import TableSkeleton from "@/skeletons/TableSkeleton";
 
 export function TableData() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -22,7 +22,7 @@ export function TableData() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -38,12 +38,22 @@ export function TableData() {
             <TableHead className="w-[100px] text-white font-bold">
               Vendor
             </TableHead>
-            <TableHead className="text-white font-bold">Rider</TableHead>
-            <TableHead className="text-white font-bold">Pickup</TableHead>
-            <TableHead className="text-white font-bold">Drop-off</TableHead>
-            <TableHead className="text-white font-bold">Date</TableHead>
-            <TableHead className="text-white font-bold">Time</TableHead>
-            <TableHead className="text-left py-6 font-bold text-white">
+            <TableHead className="text-white font-bold md:text-[14px] text-sm">
+              Rider
+            </TableHead>
+            <TableHead className="text-white font-bold md:text-[14px] text-sm">
+              Pickup
+            </TableHead>
+            <TableHead className="text-white font-bold md:text-[14px] text-sm">
+              Drop-off
+            </TableHead>
+            <TableHead className="text-white font-bold md:text-[14px] text-sm">
+              Date
+            </TableHead>
+            <TableHead className="text-white font-bold md:text-[14px] text-sm">
+              Time
+            </TableHead>
+            <TableHead className="text-left py-6 font-bold md:text-[14px] text-sm text-white">
               Status
             </TableHead>
           </TableRow>
@@ -57,12 +67,12 @@ export function TableData() {
                   className="border-b border-gray-300 text-[16px]"
                 >
                   <TableCell className=" w-[250px] border-r border-gray-300 whitespace-nowrap">
-                    <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
+                    <div className="flex items-center gap-2 md:w-[200px] w-[200px] md:text-[15px] text-sm">
                       <img src={avatarF} alt="" /> {invoice.vendor}
                     </div>
                   </TableCell>
                   <TableCell className="border-r border-gray-300 whitespace-nowrap md:w-[200px] w-[300px]">
-                    <div className="flex items-center md:gap-2 md:w-[200px] w-[200px]">
+                    <div className="flex items-center md:gap-2 md:w-[200px] w-[200px] md:text-[15px] text-sm">
                       <img src={avatarM} alt="" />
                       {invoice.riders}
                     </div>
@@ -73,19 +83,19 @@ export function TableData() {
                   <TableCell className="border-r border-gray-300 whitespace-nowrap">
                     {invoice.dropoff}
                   </TableCell>
-                  <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
+                  <TableCell className="text-left border-r border-gray-300 whitespace-nowrap md:text-[15px] text-sm">
                     {invoice.date}
                   </TableCell>
-                  <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
+                  <TableCell className="text-left border-r border-gray-300 whitespace-nowrap md:text-[15px] text-sm">
                     {invoice.time}
                   </TableCell>
-                  <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
+                  <TableCell className="text-left border-r border-gray-300 whitespace-nowrap md:text-[15px] text-sm">
                     <div className="flex items-center gap-3">
                       <div className="md:w-[150px] w-[200px] text-center">
                         <div
-                          className={`${invoice.border} ${invoice.textColor} py-2 rounded-full`}
+                          className={`${invoice.border} ${invoice.textColor} py-2 rounded-full md:text-[15px] text-sm`}
                         >
-                          {invoice.Status} 
+                          {invoice.Status}
                         </div>
                       </div>
                       <div>

@@ -23,7 +23,7 @@ export const LoginForm = () => {
     toggleIsTrustedDeviceLogin,
   } = useLogin();
   return (
-    <div className="font-body flex md:justify-center flex-col md:items-center justify-center items-center w-full">
+    <div className="font-body flex flex-col justify-center items-center">
       <div className="mb-10">
         <h2 className="md:text-5xl text-2xl font-bold text-tertiary capitalize">
           Login to your account

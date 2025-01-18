@@ -11,12 +11,12 @@ export const AuthLayout = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-bl from-purple-950/30 to-purple-900/20" />
       </div>
-      <div className="">
+      <div className="flex justify-center items-center">
         <div className="py-10 px-4 md:px-12">
           <div className="flex items-center justify-center md:justify-end p-8">
             <Logo />
           </div>
-          <div>
+          <div className="flex justify-center items-center">
             <Outlet />
           </div>
         </div>

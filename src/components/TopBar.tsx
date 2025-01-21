@@ -1,12 +1,15 @@
 import { FaBell } from "react-icons/fa6";
 import MyAvatar from "./Avatar";
 
-export default function TopBar() {
+interface ActiveNavProps {
+  ActiveNav: string;
+}
+export default function TopBar({ ActiveNav }: ActiveNavProps) {
   return (
     <div className="">
       <div className="grid grid-cols-3 md:gap-7 items-center place-items-center pl-4 lg:pl-60">
         <div>
-          <h1 className="text-tertiary font-semibold">Dashboard</h1>
+          <h1 className="text-tertiary font-semibold">{ActiveNav}</h1>
         </div>
         <div className="hidden md:block">
           <input

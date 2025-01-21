@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
-module.exports = withMT({
+import withMT from "@material-tailwind/react/utils/withMT";
+export default withMT({
   darkMode: ["class"],
   content: [
     "./index.html",
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -34,7 +34,7 @@ module.exports = withMT({
           500: "#72459f",
           400: "#a490cc",
           300: "#ad9bd1",
-          200: "#ebe6f0"
+          200: "#ebe6f0",
         },
         vendors: {
           500: "#30a87d",
@@ -46,13 +46,13 @@ module.exports = withMT({
           500: "#ef7f0f",
           400: "#f19f69",
           300: "#f8c5a4",
-          200: "#feece1"
+          200: "#feece1",
         },
         shipments: {
           500: "#198ee3",
           400: "#699bf7",
           300: "#8dc0e6",
-          200: "#e6fbff"
+          200: "#e6fbff",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -80,7 +80,7 @@ module.exports = withMT({
         },
       },
       fontFamily: {
-        body: ['Satoshi']
+        body: ["Satoshi"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -103,5 +103,5 @@ module.exports = withMT({
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-})
+  plugins: [import("tailwindcss-animate")],
+});

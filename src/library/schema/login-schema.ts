@@ -2,15 +2,16 @@ import { z } from "zod";
 
 export const LoginSchema = z.object({
   account_type: z.string(),
-  email: z.string({ message: "Email is required" }).email({
-    message: "Please enter a valid email address",
-  }),
+  email: z
+    .string()
+    .min(1, { message: "This field has to be filled." })
+    .email("This is not a valid email."),
   password: z
     .string({ message: "Password is required" })
     .min(6, {
       message: "Password must be at least 6 characters long",
     })
-    .max(30, { message: "Password must be no more than 30 characters long" })
+    .max(30, { message: "Password must be no more than 8 characters long" })
     .regex(/[!@#$%^&*(),.?":{}|<>]/, {
       message: "Password must contain at least one special character",
     })

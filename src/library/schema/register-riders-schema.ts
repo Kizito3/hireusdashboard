@@ -14,9 +14,7 @@ export const RegisterRiderSchema = z.object({
   phone: z
     .string({ message: "Phone number is required" })
     .min(2, { message: "Phone number must be at least 2 characters." }),
-  email: z
-    .string({ message: "Email is required" })
-    .email({ message: "Please enter a valid email address" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
   guarantor: z
     .string({ message: "Guarantor is required" })
     .min(2, { message: "guarantor name must be at least 2 characters." }),

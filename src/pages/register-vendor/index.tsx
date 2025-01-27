@@ -7,7 +7,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import * as z from 'zod'
+import * as z from "zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
@@ -24,12 +24,10 @@ export const RegisterVendor = () => {
       last_name: "",
       email: "",
       phone: "",
-      password: ""
+      password: "",
     },
     mode: "onChange",
   });
-
-
 
   const onSubmit = (values: z.infer<typeof VendorSchema>) => {
     console.log("submitted", values);
@@ -54,7 +52,7 @@ export const RegisterVendor = () => {
               name="business_name"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Business name
                   </Label>
                   <FormControl>
@@ -62,7 +60,7 @@ export const RegisterVendor = () => {
                       placeholder="John Logistics"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold "
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold "
                     />
                   </FormControl>
                   <FormMessage />
@@ -74,7 +72,7 @@ export const RegisterVendor = () => {
               name="business_category"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Business category
                   </Label>
                   <FormControl>
@@ -82,7 +80,7 @@ export const RegisterVendor = () => {
                       placeholder="logistics"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold "
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold "
                     />
                   </FormControl>
                   <FormMessage />
@@ -94,7 +92,7 @@ export const RegisterVendor = () => {
               name="first_name"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Firstname
                   </Label>
                   <FormControl>
@@ -102,7 +100,7 @@ export const RegisterVendor = () => {
                       placeholder="Victor"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -114,7 +112,7 @@ export const RegisterVendor = () => {
               name="last_name"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Lastname
                   </Label>
                   <FormControl>
@@ -122,7 +120,7 @@ export const RegisterVendor = () => {
                       placeholder="Prince"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -134,7 +132,7 @@ export const RegisterVendor = () => {
               name="email"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Email
                   </Label>
                   <FormControl>
@@ -142,7 +140,7 @@ export const RegisterVendor = () => {
                       placeholder="Victor@gmail.com"
                       {...field}
                       type="email"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -154,7 +152,7 @@ export const RegisterVendor = () => {
               name="phone"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Phone
                   </Label>
                   <FormControl>
@@ -162,20 +160,20 @@ export const RegisterVendor = () => {
                       placeholder="0908785643"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="password"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Password
                   </Label>
                   <FormControl>
@@ -183,7 +181,7 @@ export const RegisterVendor = () => {
                       placeholder="*********"
                       {...field}
                       type="password"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -193,7 +191,7 @@ export const RegisterVendor = () => {
 
             <Button
               type="submit"
-              className="flex justify-center items-center sm:!w-[634px] w-full text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
+              className="flex justify-center items-center sm:!w-[634px] w-full md:text-xl text-md md:h-14 h-10 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
             >
               Submit
             </Button>

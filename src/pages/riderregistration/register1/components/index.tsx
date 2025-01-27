@@ -4,7 +4,7 @@ import { RegisterRider } from "./register-rider";
 export const RiderRegistration = () => {
   return (
     <div>
-      {/* <Process /> */}
+      {/* <Process currentStep={1} /> */}
       <RegisterRider />
     </div>
   );

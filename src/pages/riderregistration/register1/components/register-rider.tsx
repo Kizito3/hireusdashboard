@@ -14,9 +14,7 @@ import { useForm } from "react-hook-form";
 import { RegisterRiderSchema } from "@/library/schema/register-riders-schema";
 import { Label } from "@radix-ui/react-dropdown-menu";
 
-
 export const RegisterRider = () => {
-
   const form = useForm<z.infer<typeof RegisterRiderSchema>>({
     resolver: zodResolver(RegisterRiderSchema),
     defaultValues: {
@@ -58,7 +56,7 @@ export const RegisterRider = () => {
               name="first_name"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     FirstName
                   </Label>
                   <FormControl>
@@ -66,7 +64,7 @@ export const RegisterRider = () => {
                       placeholder="John"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold "
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold "
                     />
                   </FormControl>
                   <FormMessage />
@@ -78,7 +76,7 @@ export const RegisterRider = () => {
               name="last_name"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     LastName
                   </Label>
                   <FormControl>
@@ -86,7 +84,7 @@ export const RegisterRider = () => {
                       placeholder="Victor"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold "
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold "
                     />
                   </FormControl>
                   <FormMessage />
@@ -98,7 +96,7 @@ export const RegisterRider = () => {
               name="email"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Email
                   </Label>
                   <FormControl>
@@ -106,7 +104,7 @@ export const RegisterRider = () => {
                       placeholder="Email"
                       {...field}
                       type="email"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -118,7 +116,7 @@ export const RegisterRider = () => {
               name="phone"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Phone
                   </Label>
                   <FormControl>
@@ -126,7 +124,7 @@ export const RegisterRider = () => {
                       placeholder="08164361932"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -138,7 +136,7 @@ export const RegisterRider = () => {
               name="guarantor"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Guarantor's Name
                   </Label>
                   <FormControl>
@@ -146,7 +144,7 @@ export const RegisterRider = () => {
                       placeholder="Abiola Dami"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -158,7 +156,7 @@ export const RegisterRider = () => {
               name="guarantor_phone"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Guarantor's Number
                   </Label>
                   <FormControl>
@@ -166,7 +164,7 @@ export const RegisterRider = () => {
                       placeholder="09056778352"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -178,7 +176,7 @@ export const RegisterRider = () => {
               name="guarantor_address"
               render={({ field }) => (
                 <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold text-xl">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
                     Guarantor's Address
                   </Label>
                   <FormControl>
@@ -186,7 +184,7 @@ export const RegisterRider = () => {
                       placeholder="no 15 law nwankwo street"
                       {...field}
                       type="text"
-                      className="sm:!w-[634px] outline-black h-16 placeholder:text-gray-500 font-bold"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
                     />
                   </FormControl>
                   <FormMessage />
@@ -196,7 +194,7 @@ export const RegisterRider = () => {
 
             <Button
               type="submit"
-              className="flex justify-center items-center sm:!w-[634px] w-full text-xl h-14 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
+              className="flex justify-center items-center sm:!w-[634px] w-full text-xl md:h-14 h-10 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
             >
               Submit
             </Button>

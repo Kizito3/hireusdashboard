@@ -46,6 +46,7 @@ function App() {
           path="/dashboard/vendor-registration"
           element={<RegisterVendor />}
         />
+        <Route path="/dashboard/add-agent" element={<pages.AddAgent />} />
       </Route>
       {/* </Route> */}
       {/* </Route> */}

@@ -18,6 +18,7 @@ export const RegisterVendor = () => {
   const form = useForm<z.infer<typeof VendorSchema>>({
     resolver: zodResolver(VendorSchema),
     defaultValues: {
+      account_type: "vendor",
       business_name: "",
       business_category: "",
       first_name: "",
@@ -36,7 +37,7 @@ export const RegisterVendor = () => {
   return (
     <div className="font-body w-full">
       <div className="mb-10 flex flex-col justify-start items-start w-full">
-        <h2 className="sm:text-4xl text-3xl font-bold text-tertiary capitalize sm:whitespace-nowrap">
+        <h2 className="md:text-4xl text-2xl font-bold text-tertiary capitalize sm:whitespace-nowrap">
           Registration
         </h2>
         <p className="font-bold text-[#5e6769] mt-2">

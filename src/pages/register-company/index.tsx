@@ -18,6 +18,7 @@ export const RegisterCompany = () => {
   const form = useForm<z.infer<typeof CompanySchema>>({
     resolver: zodResolver(CompanySchema),
     defaultValues: {
+      account_type: "company",
       company_name: "",
       address_text: "",
       country: "",

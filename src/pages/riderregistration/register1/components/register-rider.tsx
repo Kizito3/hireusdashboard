@@ -18,6 +18,7 @@ export const RegisterRider = () => {
   const form = useForm<z.infer<typeof RegisterRiderSchema>>({
     resolver: zodResolver(RegisterRiderSchema),
     defaultValues: {
+      account_type: "rider",
       first_name: "",
       last_name: "",
       email: "",

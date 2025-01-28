@@ -1,10 +1,11 @@
 import { z } from "zod";
 
 export const CompanySchema = z.object({
+  account_type: z.string(),
   company_name: z
     .string({ message: "Company name is required" })
     .min(2, { message: "Company name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
+  email: z.string().email({ message: "valid Email is required" }),
   address_text: z
     .string({ message: "Address is required" })
     .min(2, { message: "Address must be at least 2 characters." }),

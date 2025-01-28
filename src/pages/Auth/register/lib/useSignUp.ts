@@ -21,7 +21,7 @@ export const useSignUp = (): useSignUpReturn => {
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
-      account_type: "admin",
+      account_type: "",
       first_name: "",
       last_name: "",
       email: "",

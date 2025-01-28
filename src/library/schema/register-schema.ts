@@ -10,7 +10,7 @@ export const RegisterSchema = z.object({
     .string({ message: "Lastname is required" })
     .min(2, { message: "Lastname must be at least 2 characters." }),
 
-  email: z.string().email({ message: "Enter a valid email address" }),
+  email: z.string().email({ message: "valid Email is required" }),
 
   // terms_of_service: z.boolean({
   //   message: "Please aceept our teams of service",

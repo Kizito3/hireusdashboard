@@ -1,45 +1,44 @@
 type RidersAccountTypes = {
-    total : number | string,
-    text : string,
-    icon : IconType,
-}
+  total: number | string;
+  text: string;
+  icon: IconType;
+};
 
- type CardProps = {
-   total: number;
-   icon: IconType;
-   info: string;
-  
- };
+type CardProps = {
+  total: number;
+  icon: IconType;
+  info: string;
+};
 
- type DataProps = {
-   navName: string;
-   icon: IconType;
-   link: string;
- };
+type DataProps = {
+  navName: string;
+  icon: IconType;
+  link: string;
+};
 
- type RiderAccountProps = {
-  id:number
+type RiderAccountProps = {
+  id: number;
   vendor: string;
   date: string;
   earnings: number;
   percentage: number;
   time: string;
- }
+};
 
- type RidersProps = {
-  id:number;
-   name: string;
-   number: number;
-   email: string;
-   location: string;
-   shipment: number;
-   payment: string;
-   status?: string;
-   color?: string;
-   active?: string;
- };
+type RidersProps = {
+  id: number;
+  name: string;
+  number: number;
+  email: string;
+  location: string;
+  shipment: number;
+  payment: string;
+  status?: string;
+  color?: string;
+  active?: string;
+};
 type TableProps = {
-  id:number;
+  id: number;
   vendor: string;
   riders: string;
   dropoff: string;
@@ -54,7 +53,7 @@ type TableProps = {
 };
 
 type VendorProps = {
-  id:number;
+  id: number;
   name: string;
   phone: number;
   email: string;
@@ -76,7 +75,7 @@ type shipmentProps = {
   to?: string;
 };
 
-type Roles = "admin" | "x-admin" | "company" | "vendor"| "personal";
+type Roles = "admin" | "x-admin" | "company" | "vendor" | "personal";
 
 type User = {
   _id: string;

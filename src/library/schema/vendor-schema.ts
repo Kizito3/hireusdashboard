@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const VendorSchema = z.object({
+  account_type: z.string(),
   business_name: z
     .string({ message: "Business Name is required" })
     .min(2, { message: "Business name must be at least 2 characters long" }),
@@ -15,7 +16,7 @@ export const VendorSchema = z.object({
   last_name: z
     .string({ message: "Lastname is required" })
     .min(2, { message: "Lastname must be at least 2 characters long" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
+  email: z.string().email({ message: "valid Email is required" }),
   phone: z
     .string({ message: "Phone number is required" })
     .min(2, { message: "Phone number must be at least 2 characters." }),

@@ -72,7 +72,7 @@ export function AgentsTable() {
             : vendors.map((vendor) => (
                 <TableRow
                   key={vendor.id}
-                  className="border-b border-gray-300 font-bold text-[16px]"
+                  className="border-b border-gray-300 font-medium text-[16px]"
                 >
                   <TableCell className=" w-[200px] border-r border-gray-300 whitespace-nowrap ">
                     <div className="flex items-center gap-2 md:w-[200px] w-[200px]">

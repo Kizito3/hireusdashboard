@@ -16,3 +16,4 @@ export * from "./signup";
 export * from "./unauthorized";
 export * from "./riderregistration/register1/components";
 export * from "./add-agent/index";
+export * from "./each-agent/index";

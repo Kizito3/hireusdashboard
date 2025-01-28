@@ -68,15 +68,19 @@ export function CompanyTable() {
         </TableHeader>
         <TableBody>
           {loading
-            ? Array.from({ length: 5 }).map((_, i) => <TableSkeleton key={i} />)
+            ? Array.from({ length: 6 }).map((_, i) => <TableSkeleton key={i} />)
             : vendors.map((vendor) => (
                 <TableRow
                   key={vendor.id}
-                  className="border-b border-gray-300 font-bold text-[16px]"
+                  className="border-b border-gray-300 font-medium text-[16px]"
                 >
                   <TableCell className=" w-[200px] border-r border-gray-300 whitespace-nowrap ">
                     <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
-                      <img src={avatarM} alt="" /> {vendor.name}
+                      <img src={avatarM} alt="" />
+                      <Link to={`${vendor.id}`}>
+                        {" "}
+                        <span>{vendor.name}</span>
+                      </Link>
                     </div>
                   </TableCell>
                   <TableCell className="border-r border-gray-300 whitespace-nowrap w-[200px]">

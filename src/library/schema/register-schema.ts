@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const RegisterSchema = z.object({
-  account_type : z.string(),
+  account_type: z.string(),
   first_name: z
     .string({ message: "Firstname is required" })
     .min(2, { message: "Firstname must be at least 2 characters." }),
@@ -10,9 +10,7 @@ export const RegisterSchema = z.object({
     .string({ message: "Lastname is required" })
     .min(2, { message: "Lastname must be at least 2 characters." }),
 
-  email: z
-    .string({ message: "Enter is required" })
-    .email({ message: "Enter a valid email address" }),
+  email: z.string().email({ message: "Enter a valid email address" }),
 
   // terms_of_service: z.boolean({
   //   message: "Please aceept our teams of service",

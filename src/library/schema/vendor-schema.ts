@@ -15,9 +15,7 @@ export const VendorSchema = z.object({
   last_name: z
     .string({ message: "Lastname is required" })
     .min(2, { message: "Lastname must be at least 2 characters long" }),
-  email: z
-    .string({ message: "Email is required" })
-    .email({ message: "Please enter a valid email address" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z
     .string({ message: "Phone number is required" })
     .min(2, { message: "Phone number must be at least 2 characters." }),

@@ -2,10 +2,8 @@ import { z } from "zod";
 
 export const LoginSchema = z.object({
   account_type: z.string(),
-  email: z
-    .string()
-    .min(1, { message: "This field has to be filled." })
-    .email("This is not a valid email."),
+  email: z.string().email("This is not a valid email."),
+
   password: z
     .string({ message: "Password is required" })
     .min(6, {

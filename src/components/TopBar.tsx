@@ -18,8 +18,8 @@ export default function TopBar({ ActiveNav }: ActiveNavProps) {
             className="2xl:w-[474px] md:w-[300px] border-[2px] border-[#25436e] h-[37px] rounded-full outline-none px-6 placeholder:text-[#25436e]"
           />
         </div>
-        <div className="pl-40">
-          <div className="flex items-center gap-10 whitespace-nowrap">
+        <div className="ml-60">
+          <div className="flex md:items-center justify-end gap-10 whitespace-nowrap">
             <div className="relative">
               <FaBell className="text-[#25436e]" size={36} />
               <div className="absolute -top-1 right-0 h-6 w-6 rounded-full flex justify-center items-center bg-[#fd591b]">
@@ -30,7 +30,7 @@ export default function TopBar({ ActiveNav }: ActiveNavProps) {
             </div>
             <MyAvatar />
             <div className="font-semibold">
-              <h2 className="hidden lg:block text-[#25436e]">Hello Sonia</h2>
+              <h2 className="hidden md:block text-[#25436e]">Hello Sonia</h2>
             </div>
           </div>
         </div>

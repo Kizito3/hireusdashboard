@@ -31,25 +31,29 @@ function App() {
           <Route path="/auth/password-reset" element={<ChangePassword />} />
         </Route>
       </Route>
-      {/* <Route element={<PersistLogin />}> */}
-      {/* <Route element={<RequireAuth />}> */}
-      <Route element={<RegisterLayout />}>
+      <Route element={<PersistLogin />}>
         <Route
-          path="/dashboard/rider-registration"
-          element={<pages.RiderRegistration />}
-        />
-        <Route
-          path="/dashboard/company-registration"
-          element={<RegisterCompany />}
-        />
-        <Route
-          path="/dashboard/vendor-registration"
-          element={<RegisterVendor />}
-        />
-        <Route path="/dashboard/add-agent" element={<pages.AddAgent />} />
+          element={
+            <RequireAuth allowedRoles={["company", "admin", "x-admin"]} />
+          }
+        >
+          <Route element={<RegisterLayout />}>
+            <Route
+              path="/dashboard/rider-registration"
+              element={<pages.RiderRegistration />}
+            />
+            <Route
+              path="/dashboard/company-registration"
+              element={<RegisterCompany />}
+            />
+            <Route
+              path="/dashboard/vendor-registration"
+              element={<RegisterVendor />}
+            />
+            <Route path="/dashboard/add-agent" element={<pages.AddAgent />} />
+          </Route>
+        </Route>
       </Route>
-      {/* </Route> */}
-      {/* </Route> */}
 
       {/* PROTECTED ROUTES */}
       <Route element={<PersistLogin />}>

@@ -1,6 +1,6 @@
 import { Logo } from "@/components/shared/logo";
 import { Outlet, useNavigate } from "react-router-dom";
-import { MoveLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 export const RegisterLayout = () => {
   const navigate = useNavigate();
@@ -15,8 +15,14 @@ export const RegisterLayout = () => {
         <div className=" py-10 px-6 sm:px-12">
           <div className="flex justify-between items-center mb-4">
             <div>
-              <button onClick={handleBack} className="border border-tertiary inline-flex items-center p-1 rounded-full">
-                <MoveLeft size={30} className=" text-tertiary" />
+              <button
+                onClick={handleBack}
+                className="border border-tertiary inline-flex items-center p-1 rounded-sm group hover:bg-tertiary hover:transition-all hover:delay-200"
+              >
+                <ArrowLeft
+                  size={30}
+                  className=" text-tertiary group-hover:text-white group-hover:transition-all group-hover:delay-200"
+                />
               </button>
             </div>
             <div className="">

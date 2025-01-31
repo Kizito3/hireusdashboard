@@ -37,7 +37,7 @@ export function CompanyTable() {
 
         <div className="flex items-center gap-4 mt-5">
           <div>
-            <Link to="/dashboard/add-agent">
+            <Link to="/add/agent">
               <span className="text-tertiary font-bold text-xl">
                 + Add agent
               </span>

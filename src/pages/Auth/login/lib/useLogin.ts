@@ -41,7 +41,6 @@ export const useLogin = (): useLoginReturn => {
       localStorage.setItem("isLoggedIn", JSON.stringify(data.data.success));
       toast.success(data.data.message);
       navigate("/dashboard");
-      console.log(data.data);
       form.reset();
     } catch (error: unknown) {
       const errorMessage =

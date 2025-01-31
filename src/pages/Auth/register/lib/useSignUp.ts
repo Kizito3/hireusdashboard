@@ -35,7 +35,6 @@ export const useSignUp = (): useSignUpReturn => {
     setIsLoading(true);
     try {
       const data = await signup(values);
-      console.log("data", data.data);
       const token = data.headers["authorization"];
       localStorage.setItem("token", token);
       localStorage.removeItem(token);

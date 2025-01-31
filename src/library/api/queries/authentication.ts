@@ -1,4 +1,4 @@
-import { authEndpoints } from "../axios";
+import { agentEndPoints, authEndpoints } from "../axios";
 import { axiosPrivate } from "../axios/config";
 
 // Authentication Queries
@@ -81,6 +81,46 @@ export const resetPassword = async (data: ResetPassword, token: string) => {
 export const resendPasswordResetToken = async (token: string) => {
   return await axiosPrivate.get<ApiResponse<null>>(
     authEndpoints.resend_password_reset_code,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};
+
+// ===================================Agent authentications==================================
+
+export const agentsignup = async (data: AgentSignUp, token: string) => {
+  return await axiosPrivate.post<ApiResponse<null>>(
+    agentEndPoints.signup,
+    data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};
+
+export const agentverifyemail = async (
+  data: { verification_code: string },
+  token: string
+) => {
+  return await axiosPrivate.post<ApiResponse<null>>(
+    agentEndPoints.verify_email,
+    data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};
+
+export const resendagentemail = async (token: string) => {
+  return await axiosPrivate.get<ApiResponse<null>>(
+    agentEndPoints.resend_email_verification_code,
     {
       headers: {
         Authorization: `Bearer ${token}`,

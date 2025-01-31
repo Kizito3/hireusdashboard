@@ -35,3 +35,32 @@ export const userEndPoints = {
   /** `GET` : Refresh token route */
   refresh: "/a/refresh-token",
 };
+
+export const agentEndPoints = {
+  /** `POST`: Add agent route */
+  signup: "/agent/register",
+
+  /** `POST`: Agent login route */
+  login: "/agent/login",
+
+  /** `POST`: Agent email verification route */
+  verify_email: "/agent/verify-email",
+
+  /** `POST`: Agent forgot password route  */
+  forgot_password: "/agent/forgot-password",
+
+  /** `GET`: Agent resend email route */
+  resend_email_verification_code: "agent/email/resend-code",
+
+  /** `GET`: Resend agent reset password code route  */
+  resend_password_reset_code: "/agent/password/resend-code",
+
+  /** `POST`: Verifies password reset code route */
+  verify_password_reset_code: "/agent/verify-password-reset-code",
+
+  /** `PUT`: Resets forgotten password route */
+  reset_password: "/agent/reset-password",
+
+  /** `GET`: Agent profile lookup route */
+  agent_profile: "/agent/profile",
+};

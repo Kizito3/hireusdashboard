@@ -39,18 +39,13 @@ function App() {
         >
           <Route element={<RegisterLayout />}>
             <Route
-              path="/dashboard/rider-registration"
+              path="/rider/register"
               element={<pages.RiderRegistration />}
             />
-            <Route
-              path="/dashboard/company-registration"
-              element={<RegisterCompany />}
-            />
-            <Route
-              path="/dashboard/vendor-registration"
-              element={<RegisterVendor />}
-            />
-            <Route path="/dashboard/add-agent" element={<pages.AddAgent />} />
+            <Route path="/company/register" element={<RegisterCompany />} />
+            <Route path="/vendor/register" element={<RegisterVendor />} />
+            <Route path="/add/agent" element={<pages.AddAgent />} />
+            <Route path="/agent/verify/email" element={<pages.VerifyAgent />} />
           </Route>
         </Route>
       </Route>

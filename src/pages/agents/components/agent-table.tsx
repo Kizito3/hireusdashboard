@@ -37,7 +37,7 @@ export function AgentsTable() {
 
         <div className="flex items-center gap-4 mt-5">
           <div>
-            <Link to="/dashboard/company-registration">
+            <Link to="/company/register">
               <span className="text-tertiary font-bold text-xl">
                 + Add company
               </span>

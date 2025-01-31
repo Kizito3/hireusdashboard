@@ -15,5 +15,6 @@ export * from "./Auth/login";
 export * from "./signup";
 export * from "./unauthorized";
 export * from "./riderregistration/register1/components";
-export * from "./add-agent/index";
+export * from "./AuthAgent/add-agent/index";
 export * from "./each-agent/index";
+export * from "./AuthAgent/verify/index";

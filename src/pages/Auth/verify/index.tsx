@@ -112,21 +112,23 @@ export function VerifyEmail() {
               "Submit"
             )}
           </Button>
+
+          <Button
+            onClick={handleResend}
+            type="submit"
+            className="whitespace-nowrap"
+          >
+            {isResend ? (
+              <span className="flex gap-3 items-center">
+                <Loader2 className="animate-spin h-6 w-6 " />
+                Please wait...
+              </span>
+            ) : (
+              "Resend code"
+            )}
+          </Button>
         </form>
-        <button
-          onClick={handleResend}
-          type="submit"
-          className="whitespace-nowrap"
-        >
-          {isResend ? (
-            <span className="flex gap-3 items-center">
-              <Loader2 className="animate-spin h-6 w-6 " />
-              Please wait...
-            </span>
-          ) : (
-            "Resend code"
-          )}
-        </button>
+
         <ToastContainer
           position="bottom-right"
           className="font-body font-bold"

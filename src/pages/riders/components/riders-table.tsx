@@ -20,11 +20,11 @@ export function RidersTable() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const timer = setTimeout(()=>{
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000)
+    }, 2000);
     return () => clearTimeout(timer);
-  },[])
+  }, []);
 
   return (
     <div className="font-body md:px-10 px-4 mb-14 mt-5">
@@ -37,12 +37,14 @@ export function RidersTable() {
 
         <div className="flex items-center gap-4 mt-5">
           <div className="flex items-center gap-1">
-            <CiSearch className="font-bold text-xl" size={25}/>
+            <CiSearch className="font-bold text-xl" size={25} />
             <span className="font-bold text-xl">Search</span>
           </div>
           <div>
-            <Link to="/dashboard/rider-registration">
-            <span className="text-tertiary font-bold text-xl">+ Add Rider</span>
+            <Link to="/rider/register">
+              <span className="text-tertiary font-bold text-xl">
+                + Add Rider
+              </span>
             </Link>
           </div>
         </div>
@@ -56,12 +58,8 @@ export function RidersTable() {
             </TableHead>
             <TableHead className="text-white font-bold">Phone</TableHead>
             <TableHead className="text-white font-bold">Email</TableHead>
-            <TableHead className="text-white font-bold">
-              Location
-            </TableHead>
-            <TableHead className="text-white font-bold">
-              Shipment
-            </TableHead>
+            <TableHead className="text-white font-bold">Location</TableHead>
+            <TableHead className="text-white font-bold">Shipment</TableHead>
             <TableHead className="text-white font-bold">Payment</TableHead>
             <TableHead className="text-left py-6 text-white font-bold">
               Status

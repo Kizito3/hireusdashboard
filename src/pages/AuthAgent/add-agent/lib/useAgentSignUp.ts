@@ -36,8 +36,11 @@ export const useAgentSignUp = (): useAgentSignUpReturn => {
   const onSubmit = async (values: z.infer<typeof AgentSchema>) => {
     setIsLoading(true);
     try {
+      // `AccessToken` is required to add an agent, meaning only an authorized admin or a company can add agents
       const data = await agentsignup(values, accessToken!);
-
+      console.log(data.headers["authorization"]);
+      const token = data.headers["authorization"];
+      localStorage.setItem("token", token!);
       setTimeout(() => {
         navigate("/agent/verify/email");
       }, 3000);

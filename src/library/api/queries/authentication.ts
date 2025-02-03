@@ -107,7 +107,7 @@ export const agentverifyemail = async (
   data: { verification_code: string },
   token: string
 ) => {
-  return await axiosPrivate.post<ApiResponse<null>>(
+  return await axiosPrivate.post<ApiResponse<UserData>>(
     agentEndPoints.verify_email,
     data,
     {

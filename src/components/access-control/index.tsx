@@ -6,13 +6,15 @@ import {
   useProfileStore,
   useRefreshToken,
 } from "../../library/hooks";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export const RequireAuth = ({ allowedRoles }: { allowedRoles?: Roles[] }) => {
   const { accessToken } = useAuthStore();
   const { profile } = useProfileStore();
   const location = useLocation();
-
+  useEffect(() => {
+    console.log(profile);
+  }, [profile]);
   return profile?.roles?.find((role) => allowedRoles?.includes(role)) ? (
     <Outlet />
   ) : accessToken ? (

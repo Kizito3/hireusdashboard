@@ -41,11 +41,13 @@ export const useVerifyAgentEmail = (): useVerifyAgentEmailReturn => {
   const onSubmit = async (otps: z.infer<typeof OtpSchemaAgent>) => {
     setIsLoading(true);
     try {
+      const verifyToken = localStorage.getItem("token");
       const data = await agentverifyemail(
         { verification_code: otps.pin },
-        accessToken!
+        verifyToken!
       );
-      console.log("data", data);
+      localStorage.removeItem("token");
+      toast.success(data.data.message);
     } catch (error: unknown) {
       console.log("error", error);
       const errorMessage =

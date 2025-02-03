@@ -25,7 +25,7 @@ export const useLogin = (): useLoginReturn => {
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
-      account_type: "admin",
+      account_type: "agent",
       email: "",
       password: "",
     },

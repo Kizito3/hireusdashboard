@@ -1,11 +1,15 @@
 import { cn } from "../../../../@/lib/utils";
+// import { useTotalSummary } from "../lib/useTotalSummary";
 
 export default function EachCard({
   total,
   info,
   icon,
   index,
-}: CardProps & { index?: number }) {
+  data,
+}: CardProps & { index?: number } & { data: Summary | object }) {
+  // console.log("data", data, isLoading);
+
   const Icon = icon;
   return (
     <div
@@ -34,7 +38,7 @@ export default function EachCard({
                 : "text-shipments-500"
             )}
           >
-            {total}
+            {data?.data?.data || total}
           </h3>
           <div className="flex items-center gap-1">
             <div>

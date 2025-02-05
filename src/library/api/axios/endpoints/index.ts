@@ -64,3 +64,37 @@ export const agentEndPoints = {
   /** `GET`: Agent profile lookup route */
   agent_profile: "/agent/profile",
 };
+
+export const vendorsEndpoint = {
+  /** `POST`: Add vendor route */
+  return_vendors: "/vendor/register",
+
+  /** `POST`: Vendor login route */
+  login: "/vendor/login",
+
+  /** `POST`: Vendor email verification route */
+  verify_email: "/vendor/verify-email",
+
+  /** `POST`: Vendor forgot password route  */
+  forgot_password: "/vendor/forgot-password",
+
+  /** `GET`: Vendor resend email route */
+  resend_email_verification_code: "vendor/email/resend-code",
+
+  /** `GET`: Resend vendor reset password code route  */
+  resend_password_reset_code: "/vendor/password/resend-code",
+
+  /** `POST`: Verifies password reset code route */
+  verify_password_reset_code: "/vendor/verify-password-reset-code",
+
+  /** `PUT`: Resets forgotten password route */
+  reset_password: "/vendor/reset-password",
+
+  /** `GET`: Vendor profile lookup route */
+  vendor_profile: "/vendor/profile",
+};
+
+export const totalSummary = {
+  /** `GET`: Vendor profile lookup route */
+  summary: "/a/summary",
+};

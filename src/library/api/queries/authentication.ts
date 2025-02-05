@@ -1,4 +1,4 @@
-import { agentEndPoints, authEndpoints } from "../axios";
+import { agentEndPoints, authEndpoints, totalSummary } from "../axios";
 import { axiosPrivate } from "../axios/config";
 
 // Authentication Queries
@@ -127,4 +127,12 @@ export const resendagentemail = async (token: string) => {
       },
     }
   );
+};
+
+export const returnsummary = async (token: string) => {
+  return await axiosPrivate.get<ApiResponse<Summary>>(totalSummary.summary, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 };

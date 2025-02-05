@@ -38,6 +38,12 @@ type AgentSignUp = {
   email: string;
   password: string;
 };
+type Summary = {
+  totalRiders: number;
+  totalUsers: number;
+  totalShipments: number;
+  totalVendors: number;
+};
 
 type AgentLogin = {
   account_type: string;

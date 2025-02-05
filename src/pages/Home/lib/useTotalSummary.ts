@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 
 interface useTotalSummaryReturn {
   isLoading: boolean;
-  data: Summary | object;
+  data: Summary | null;
 }
 
 export const useTotalSummary = (): useTotalSummaryReturn => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [data, setData] = useState<Summary | object>({});
+  const [data, setData] = useState<Summary | null>(null);
 
   const { accessToken } = useAuthStore();
 
@@ -19,8 +19,15 @@ export const useTotalSummary = (): useTotalSummaryReturn => {
 
       try {
         const response = await returnsummary(accessToken!);
-        if (response?.data) {
-          setData(response.data); // Ensure correct type
+        const responseData = response?.data?.data;
+
+        if (responseData && typeof responseData === "object") {
+          setData({
+            totalRiders: responseData.totalRiders ?? 0,
+            totalUsers: responseData.totalUsers ?? 0,
+            totalVendors: responseData.totalVendors ?? 0,
+            totalShipments: responseData.totalShipments ?? 0,
+          }); // Ensure correct type
         }
         console.log("totalsummary", response.data);
       } catch (error) {

@@ -1,4 +1,6 @@
+import { CardSkeleton2 } from "@/skeletons/CardSkeleton";
 import { cn } from "../../../../@/lib/utils";
+import { useTotalSummary } from "../lib/useTotalSummary";
 // import { useTotalSummary } from "../lib/useTotalSummary";
 
 export default function EachCard({
@@ -6,11 +8,23 @@ export default function EachCard({
   info,
   icon,
   index,
-  data,
-}: CardProps & { index?: number } & { data: Summary | object }) {
+}: CardProps & { index?: number }) {
+  const { isLoading, data } = useTotalSummary();
+
   // console.log("data", data, isLoading);
 
   const Icon = icon;
+  const totalValues = isLoading ? (
+    <CardSkeleton2 />
+  ) : index === 0 ? (
+    data?.totalRiders ?? total
+  ) : index === 1 ? (
+    data?.totalVendors ?? total
+  ) : index === 2 ? (
+    data?.totalUsers ?? total
+  ) : (
+    data?.totalShipments ?? total
+  );
   return (
     <div
       className={cn(
@@ -38,7 +52,7 @@ export default function EachCard({
                 : "text-shipments-500"
             )}
           >
-            {data?.data?.data || total}
+            {totalValues}
           </h3>
           <div className="flex items-center gap-1">
             <div>

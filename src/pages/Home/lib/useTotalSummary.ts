@@ -1,15 +1,19 @@
 import { returnsummary } from "@/library/api";
 import { useAuthStore } from "@/library/hooks";
 import { useEffect, useState } from "react";
+import { FaBox } from "react-icons/fa6";
+import { MdGroups, MdPedalBike } from "react-icons/md";
 
-interface useTotalSummaryReturn {
-  isLoading: boolean;
-  data: Summary | null;
-}
+export const InsightDataObj = {
+  riders: { name: "Riders", total: 0, icon: MdPedalBike },
+  vendors: { name: "Vendors", total: 0, icon: MdGroups },
+  users: { name: "Users", total: 0, icon: MdGroups },
+  shipments: { name: "Shipments", total: 0, icon: FaBox },
+};
 
-export const useTotalSummary = (): useTotalSummaryReturn => {
+export const useTotalSummary = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [data, setData] = useState<Summary | null>(null);
+  const [data, setData] = useState<typeof InsightDataObj>(InsightDataObj);
 
   const { accessToken } = useAuthStore();
 
@@ -22,14 +26,19 @@ export const useTotalSummary = (): useTotalSummaryReturn => {
         const responseData = response?.data?.data;
 
         if (responseData && typeof responseData === "object") {
-          setData({
-            totalRiders: responseData.totalRiders ?? 0,
-            totalUsers: responseData.totalUsers ?? 0,
-            totalVendors: responseData.totalVendors ?? 0,
-            totalShipments: responseData.totalShipments ?? 0,
-          }); // Ensure correct type
+          setData((prev) => ({
+            ...prev,
+            riders: { ...prev.riders, total: responseData.totalRiders },
+            vendors: { ...prev.vendors, total: responseData.totalVendors },
+            users: { ...prev.users, total: responseData.totalUsers },
+            shipments: {
+              ...prev.shipments,
+              total: responseData.totalShipments,
+            },
+          }));
         }
-        console.log("totalsummary", response.data);
+        process.env.NODE_ENV === "development" &&
+          console.log("totalsummary", response.data);
       } catch (error) {
         console.error(error);
       } finally {
@@ -38,7 +47,7 @@ export const useTotalSummary = (): useTotalSummaryReturn => {
     };
 
     fetchTotalSummary();
-  }, [accessToken]); // Dependency array includes token to refetch if token changes
+  }, [accessToken]);
 
-  return { isLoading, data };
+  return { isLoading, data: Object.values(data) };
 };

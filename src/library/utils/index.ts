@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { isDate, isEmail } from "validator";
 import { v4 as uuid } from "uuid";
-
-
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

@@ -1,4 +1,4 @@
-import { returnsummary } from "@/library/api";
+import { returnSummary } from "@/library/api";
 import { useAuthStore } from "@/library/hooks";
 import { useEffect, useState } from "react";
 import { FaBox } from "react-icons/fa6";
@@ -22,23 +22,20 @@ export const useTotalSummary = () => {
       setIsLoading(true);
 
       try {
-        const response = await returnsummary(accessToken!);
-        const responseData = response?.data?.data;
+        const data = (await returnSummary(accessToken!)).data.data;
 
-        if (responseData && typeof responseData === "object") {
+        if (data) {
           setData((prev) => ({
             ...prev,
-            riders: { ...prev.riders, total: responseData.totalRiders },
-            vendors: { ...prev.vendors, total: responseData.totalVendors },
-            users: { ...prev.users, total: responseData.totalUsers },
+            riders: { ...prev.riders, total: data.totalRiders },
+            vendors: { ...prev.vendors, total: data.totalVendors },
+            users: { ...prev.users, total: data.totalUsers },
             shipments: {
               ...prev.shipments,
-              total: responseData.totalShipments,
+              total: data.totalShipments,
             },
           }));
         }
-        process.env.NODE_ENV === "development" &&
-          console.log("totalsummary", response.data);
       } catch (error) {
         console.error(error);
       } finally {

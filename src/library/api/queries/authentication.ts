@@ -129,7 +129,7 @@ export const resendagentemail = async (token: string) => {
   );
 };
 
-export const returnsummary = async (token: string) => {
+export const returnSummary = async (token: string) => {
   return await axiosPrivate.get<ApiResponse<Summary>>(totalSummary.summary, {
     headers: {
       Authorization: `Bearer ${token}`,

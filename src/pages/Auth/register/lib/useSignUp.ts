@@ -26,7 +26,7 @@ export const useSignUp = (): useSignUpReturn => {
       last_name: "",
       email: "",
       password: "",
-      phone: ["09043565256"],
+      phone: [""],
       // terms_of_service: true,
     },
   });

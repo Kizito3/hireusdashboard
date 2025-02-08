@@ -10,9 +10,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { useCompanyRegister } from "./lib/useCompanyRegister";
+import { Loader2 } from "lucide-react";
+import { Slide, ToastContainer } from "react-toastify";
 
 export const RegisterCompany = () => {
-  const { form, onSubmit } = useCompanyRegister();
+  const { form, onSubmit, isLoading } = useCompanyRegister();
   return (
     <div className="font-body w-full">
       <div className="mb-10 flex flex-col justify-start items-start w-full">
@@ -214,10 +216,25 @@ export const RegisterCompany = () => {
               type="submit"
               className="flex justify-center items-center sm:!w-[634px] w-full md:text-xl text-md md:h-14 h-10 bg-tertiary hover:bg-transparent hover:text-tertiary hover:border-tertiary hover:border"
             >
-              Continue
+              {isLoading ? (
+                <span className="flex gap-3 items-center">
+                  <Loader2 className="animate-spin h-6 w-6 " />
+                  Please wait...
+                </span>
+              ) : (
+                "Register"
+              )}
             </Button>
           </form>
         </Form>
+        <div className="">
+          <ToastContainer
+            position="bottom-right"
+            className="font-body font-bold"
+            stacked
+            transition={Slide}
+          />
+        </div>
       </div>
     </div>
   );

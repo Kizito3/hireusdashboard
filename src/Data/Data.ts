@@ -57,7 +57,7 @@ export const NavItems: DataProps[] = [
   {
     navName: "Log Out",
     icon: RiLogoutCircleLine,
-    link: "logout",
+    link: "/",
   },
 ];
 

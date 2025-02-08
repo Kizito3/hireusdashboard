@@ -65,7 +65,7 @@ export const CardInfo: CardProps[] = [
   {
     total: 8000,
     icon: MdPedalBike,
-    info: "Riders",
+    info: "Ridersss",
   },
   {
     total: 500,

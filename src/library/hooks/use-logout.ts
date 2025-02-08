@@ -12,5 +12,5 @@ export const useLogout = () => {
       .catch(() => toast.error("Network error, please try again."));
   };
 
-  return signOut;
+  return { signOut };
 };

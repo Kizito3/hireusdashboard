@@ -89,7 +89,8 @@ export const RegisterForm = () => {
                 <FormControl>
                   <Input
                     placeholder="Enter your phone number"
-                    {...field}
+                    value={field.value?.[0] || ""}
+                    onChange={(e) => field.onChange([e.target.value])}
                     type="text"
                     className="sm:!w-[534px] outline-black h-12 placeholder:text-black font-bold md:placeholder:text-[16px] placeholder:text-sm"
                   />

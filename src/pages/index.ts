@@ -18,3 +18,4 @@ export * from "./riderregistration/register1/components";
 export * from "./AuthAgent/add-agent/index";
 export * from "./each-agent/index";
 export * from "./AuthAgent/verify/index";
+export * from "./each-vendors/index";

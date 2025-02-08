@@ -1,5 +1,4 @@
 // import { Process } from "./process";
-import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -7,35 +6,13 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import * as z from "zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useForm } from "react-hook-form";
 import { Label } from "@radix-ui/react-dropdown-menu";
-import { CompanySchema } from "@/library/schema/register-company";
+import { useCompanyRegister } from "./lib/useCompanyRegister";
 
 export const RegisterCompany = () => {
-  const form = useForm<z.infer<typeof CompanySchema>>({
-    resolver: zodResolver(CompanySchema),
-    defaultValues: {
-      account_type: "company",
-      company_name: "",
-      address_text: "",
-      country: "",
-      email: "",
-      state: "",
-      city: "",
-      postal_code: "",
-      password: "",
-    },
-    mode: "onChange",
-  });
-
-  const onSubmit = (values: z.infer<typeof CompanySchema>) => {
-    console.log("submitted", values);
-    form.reset();
-  };
-
+  const { form, onSubmit } = useCompanyRegister();
   return (
     <div className="font-body w-full">
       <div className="mb-10 flex flex-col justify-start items-start w-full">
@@ -72,17 +49,17 @@ export const RegisterCompany = () => {
             />
             <FormField
               control={form.control}
-              name="address_text"
+              name="contact.email"
               render={({ field }) => (
                 <FormItem className="mb-8">
                   <Label className="text-[#424242] font-bold md:text-xl text-md">
-                    Address
+                    Email
                   </Label>
                   <FormControl>
                     <Input
                       placeholder="Victor@gmail.com"
                       {...field}
-                      type="text"
+                      type="email"
                       className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold "
                     />
                   </FormControl>
@@ -92,7 +69,28 @@ export const RegisterCompany = () => {
             />
             <FormField
               control={form.control}
-              name="country"
+              name="contact.phone"
+              render={({ field }) => (
+                <FormItem className="mb-8">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
+                    Phone Number
+                  </Label>
+                  <FormControl>
+                    <Input
+                      placeholder="098775645456"
+                      value={field.value?.[0] || ""}
+                      onChange={(e) => field.onChange([e.target.value])}
+                      type="text"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="contact.address.country"
               render={({ field }) => (
                 <FormItem className="mb-8">
                   <Label className="text-[#424242] font-bold md:text-xl text-md">
@@ -100,7 +98,7 @@ export const RegisterCompany = () => {
                   </Label>
                   <FormControl>
                     <Input
-                      placeholder="Country of residence"
+                      placeholder="Nigeria"
                       {...field}
                       type="text"
                       className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
@@ -112,27 +110,7 @@ export const RegisterCompany = () => {
             />
             <FormField
               control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem className="mb-8">
-                  <Label className="text-[#424242] font-bold md:text-xl text-md">
-                    Email
-                  </Label>
-                  <FormControl>
-                    <Input
-                      placeholder="Email"
-                      {...field}
-                      type="text"
-                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="city"
+              name="contact.address.city"
               render={({ field }) => (
                 <FormItem className="mb-8">
                   <Label className="text-[#424242] font-bold md:text-xl text-md">
@@ -152,15 +130,15 @@ export const RegisterCompany = () => {
             />
             <FormField
               control={form.control}
-              name="state"
+              name="contact.address.postal_code"
               render={({ field }) => (
                 <FormItem className="mb-8">
                   <Label className="text-[#424242] font-bold md:text-xl text-md">
-                    State
+                    Postal Code
                   </Label>
                   <FormControl>
                     <Input
-                      placeholder="Lagos State"
+                      placeholder="133434"
                       {...field}
                       type="text"
                       className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
@@ -172,15 +150,15 @@ export const RegisterCompany = () => {
             />
             <FormField
               control={form.control}
-              name="postal_code"
+              name="contact.address.state"
               render={({ field }) => (
                 <FormItem className="mb-8">
                   <Label className="text-[#424242] font-bold md:text-xl text-md">
-                    Postal Code
+                    State
                   </Label>
                   <FormControl>
                     <Input
-                      placeholder="no 15 law nwankwo street"
+                      placeholder="Lagos state"
                       {...field}
                       type="text"
                       className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
@@ -190,6 +168,27 @@ export const RegisterCompany = () => {
                 </FormItem>
               )}
             />
+            <FormField
+              control={form.control}
+              name="contact.address.address_text"
+              render={({ field }) => (
+                <FormItem className="mb-8">
+                  <Label className="text-[#424242] font-bold md:text-xl text-md">
+                    Address
+                  </Label>
+                  <FormControl>
+                    <Input
+                      placeholder="no 5 Efuntide anike street"
+                      {...field}
+                      type="text"
+                      className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
             <FormField
               control={form.control}
               name="password"
@@ -200,7 +199,7 @@ export const RegisterCompany = () => {
                   </Label>
                   <FormControl>
                     <Input
-                      placeholder="*********"
+                      placeholder="********"
                       {...field}
                       type="password"
                       className="sm:!w-[634px] outline-black md:h-16 h-10 placeholder:text-gray-500 font-bold"

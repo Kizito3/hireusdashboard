@@ -71,12 +71,12 @@ export function AgentsTable() {
             ? Array.from({ length: 5 }).map((_, i) => <TableSkeleton key={i} />)
             : vendors.map((vendor) => (
                 <TableRow
-                  key={vendor.id}
+                  key={vendor._id}
                   className="border-b border-gray-300 font-medium text-[16px]"
                 >
                   <TableCell className=" w-[200px] border-r border-gray-300 whitespace-nowrap ">
                     <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
-                      <img src={avatarM} alt="" /> {vendor.name}
+                      <img src={avatarM} alt="" /> {vendor.fullName}
                     </div>
                   </TableCell>
                   <TableCell className="border-r border-gray-300 whitespace-nowrap w-[200px]">
@@ -88,7 +88,7 @@ export function AgentsTable() {
                     {vendor.email}
                   </TableCell>
                   <TableCell className="border-r border-gray-300 whitespace-nowrap">
-                    {vendor.location}
+                    {vendor.state}
                   </TableCell>
                   <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
                     {vendor.plan}

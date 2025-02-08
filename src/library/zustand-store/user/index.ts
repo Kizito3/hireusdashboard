@@ -13,4 +13,11 @@ export const userStore = create<UserStore>()((set, get) => ({
 
     return `${firstInitial}${lastInitial}`;
   },
+
+  getFullname: () => {
+    const profile = get().profile;
+    const first_Name = profile?.first_name;
+
+    return `${first_Name}`;
+  },
 }));

@@ -76,6 +76,10 @@ function App() {
               path="/dashboard/company/:id"
               element={<pages.EachAgent />}
             />
+            <Route
+              path="/dashboard/vendors/:_id/profile"
+              element={<pages.EachVendorsProfile />}
+            />
             <Route path="/dashboard/riders" element={<pages.Riders />} />
             <Route path="/dashboard/vendors" element={<pages.Vendors />} />
             <Route

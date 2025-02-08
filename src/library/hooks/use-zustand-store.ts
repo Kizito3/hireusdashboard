@@ -23,6 +23,7 @@ export const useProfileStore = () => {
       profile: state.profile,
       setProfile: state.setProfile,
       getInitials: state.getInitials,
+      getFullname: state.getFullname,
     }))
   );
 };

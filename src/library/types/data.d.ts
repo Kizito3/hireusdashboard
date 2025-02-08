@@ -53,13 +53,40 @@ type TableProps = {
 };
 
 type VendorProps = {
-  id: number;
-  name: string;
+  _id: string;
+  fullName: string;
+  state: string;
   phone: number;
   email: string;
-  location: string;
+  // addresses: Address[] | [];
   plan: string;
   shipment: number;
+};
+
+type VendorRealProps = {
+  _id: string;
+  fullName: string;
+  state: string;
+  phone: number;
+  email: string;
+  addresses: Address[] | [];
+  plan: string;
+  shipment: number;
+  payments: Payments;
+  totalShipments: number;
+  totalPayments: number;
+};
+
+type Payments = {
+  _id: string;
+  ref: string;
+  shipment_tracking: string;
+  amount: string;
+  type: string;
+  status: boolean;
+  transaction_id: string;
+  initiatedAt: string | Date;
+  completedAt: string | Date;
 };
 
 type shipmentProps = {

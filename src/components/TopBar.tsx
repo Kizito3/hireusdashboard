@@ -1,10 +1,12 @@
 import { FaBell } from "react-icons/fa6";
 import MyAvatar from "./Avatar";
+import { useProfileStore } from "@/library/hooks";
 
 interface ActiveNavProps {
   ActiveNav: string;
 }
 export default function TopBar({ ActiveNav }: ActiveNavProps) {
+  const { getFullname } = useProfileStore();
   return (
     <div className="">
       <div className="grid grid-cols-3 md:gap-7 items-center place-items-center pl-4 lg:pl-60">
@@ -30,7 +32,9 @@ export default function TopBar({ ActiveNav }: ActiveNavProps) {
             </div>
             <MyAvatar />
             <div className="font-semibold">
-              <h2 className="hidden md:block text-[#25436e]">Hello Sonia</h2>
+              <h2 className="hidden md:block text-[#25436e]">
+                Hello {getFullname()}
+              </h2>
             </div>
           </div>
         </div>

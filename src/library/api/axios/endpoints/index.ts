@@ -66,35 +66,19 @@ export const agentEndPoints = {
 };
 
 export const vendorsEndpoint = {
-  /** `POST`: Add vendor route */
-  return_vendors: "/vendor/register",
+  /** `GET`: Get all vendors route */
+  return_vendors: "/v/vendors",
 
-  /** `POST`: Vendor login route */
-  login: "/vendor/login",
-
-  /** `POST`: Vendor email verification route */
-  verify_email: "/vendor/verify-email",
-
-  /** `POST`: Vendor forgot password route  */
-  forgot_password: "/vendor/forgot-password",
-
-  /** `GET`: Vendor resend email route */
-  resend_email_verification_code: "vendor/email/resend-code",
-
-  /** `GET`: Resend vendor reset password code route  */
-  resend_password_reset_code: "/vendor/password/resend-code",
-
-  /** `POST`: Verifies password reset code route */
-  verify_password_reset_code: "/vendor/verify-password-reset-code",
-
-  /** `PUT`: Resets forgotten password route */
-  reset_password: "/vendor/reset-password",
-
-  /** `GET`: Vendor profile lookup route */
-  vendor_profile: "/vendor/profile",
+  /** `GET`: Get vendor's profile route */
+  vendor_profile: "/v/{vendorId}/profile",
 };
 
-export const totalSummary = {
+export const summaryEndpoint = {
   /** `GET`: Vendor profile lookup route */
   summary: "/a/summary",
+};
+
+export const adminEndpoints = {
+  /** `POST`: Admin Add Company route */
+  add_company: "/a/company",
 };

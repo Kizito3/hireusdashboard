@@ -10,12 +10,12 @@ interface AuthStore {
   endSession(): void;
 }
 
-
 interface UserStore {
   profile: User | null;
 
   setProfile(profile: User | null): void;
   getInitials(): string;
+  getFullname(): string;
 }
 
 interface PageStore {

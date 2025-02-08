@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { AgentSchema } from "@/library/schema/agent-schema";
 import { useForm, UseFormReturn } from "react-hook-form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { agentsignup } from "@/library/api";
 import { toast } from "react-toastify";
 import { AxiosError } from "axios";
@@ -18,7 +18,7 @@ interface useAgentSignUpReturn {
 export const useAgentSignUp = (): useAgentSignUpReturn => {
   const [isLoading, setIsLoading] = useState(false);
   const { accessToken } = useAuthStore();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof AgentSchema>>({
     resolver: zodResolver(AgentSchema),
@@ -38,12 +38,12 @@ export const useAgentSignUp = (): useAgentSignUpReturn => {
     try {
       // `AccessToken` is required to add an agent, meaning only an authorized admin or a company can add agents
       const data = await agentsignup(values, accessToken!);
-      console.log(data.headers["authorization"]);
-      const token = data.headers["authorization"];
-      localStorage.setItem("token", token!);
-      setTimeout(() => {
-        navigate("/agent/verify/email");
-      }, 3000);
+      // console.log(data.headers["authorization"]);
+      // const token = data.headers["authorization"];
+      // localStorage.setItem("token", token!);
+      // setTimeout(() => {
+      //   navigate("/agent/verify/email");
+      // }, 3000);
       toast.success(data.data.message);
       form.reset();
     } catch (error: unknown) {

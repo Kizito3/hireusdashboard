@@ -1,4 +1,11 @@
-import { agentEndPoints, authEndpoints, totalSummary } from "../axios";
+// import { VendorsResponse } from "@/pages/vendor/lib/useTotalVendors";
+import {
+  adminEndpoints,
+  agentEndPoints,
+  authEndpoints,
+  summaryEndpoint,
+  vendorsEndpoint,
+} from "../axios";
 import { axiosPrivate } from "../axios/config";
 
 // Authentication Queries
@@ -129,10 +136,48 @@ export const resendagentemail = async (token: string) => {
   );
 };
 
+// ====================================================================================
 export const returnSummary = async (token: string) => {
-  return await axiosPrivate.get<ApiResponse<Summary>>(totalSummary.summary, {
+  return await axiosPrivate.get<ApiResponse<Summary>>(summaryEndpoint.summary, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
+};
+
+export const getAllVendors = async (token: string) => {
+  return await axiosPrivate.get<{ data: { vendors: VendorRealProps[] } }>(
+    vendorsEndpoint.return_vendors,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};
+
+export const getVendorProfile = async (token: string, _id: string) => {
+  // Replace the "{vendorId}" placeholder with the actual vendor _id.
+  return await axiosPrivate.get<{ data: { vendor: VendorRealProps } }>(
+    vendorsEndpoint.vendor_profile.replace("{vendorId}", _id),
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};
+
+// =========================================================================================
+
+export const addCompany = async (data: CompanyProps, token: string) => {
+  return await axiosPrivate.post<ApiResponse<null>>(
+    adminEndpoints.add_company,
+    data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 };

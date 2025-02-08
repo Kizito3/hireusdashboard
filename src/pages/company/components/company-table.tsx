@@ -71,15 +71,15 @@ export function CompanyTable() {
             ? Array.from({ length: 6 }).map((_, i) => <TableSkeleton key={i} />)
             : vendors.map((vendor) => (
                 <TableRow
-                  key={vendor.id}
+                  key={vendor._id}
                   className="border-b border-gray-300 font-medium text-[16px]"
                 >
                   <TableCell className=" w-[200px] border-r border-gray-300 whitespace-nowrap ">
                     <div className="flex items-center gap-2 md:w-[200px] w-[200px]">
                       <img src={avatarM} alt="" />
-                      <Link to={`${vendor.id}`}>
+                      <Link to={`${vendor._id}`}>
                         {" "}
-                        <span>{vendor.name}</span>
+                        <span>{vendor.fullName}</span>
                       </Link>
                     </div>
                   </TableCell>
@@ -92,7 +92,7 @@ export function CompanyTable() {
                     {vendor.email}
                   </TableCell>
                   <TableCell className="border-r border-gray-300 whitespace-nowrap">
-                    {vendor.location}
+                    {vendor.state}
                   </TableCell>
                   <TableCell className="text-left border-r border-gray-300 whitespace-nowrap">
                     {vendor.plan}

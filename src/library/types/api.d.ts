@@ -60,3 +60,26 @@ type AgentResetPassword = {
   new_password: string;
   confirm_password: string;
 };
+
+//============= COMPANY DATA ============= /
+type CompanyProps = {
+  account_type: string;
+  company_name: string;
+  contact: Contact;
+  terms_of_service: boolean;
+  password: string;
+};
+
+type Contact = {
+  email: string;
+  phone: string[];
+  address: Address;
+};
+
+type Address = {
+  country: string;
+  city: string;
+  postal_code: string;
+  state: string;
+  address_text: string;
+};
